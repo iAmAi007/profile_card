@@ -440,11 +440,12 @@
             justify-content: center;
             padding: 10px 14px;
             border-right: none;
+            min-width: 0;
         }
 
         .signature-left .signature-name {
             font-family: 'Lexend', sans-serif;
-            font-size: 0.7rem;
+            font-size: clamp(0.5rem, 1.8vw, 0.7rem);
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 0.01em;
@@ -454,7 +455,7 @@
 
         .signature-left .signature-designation {
             font-family: 'Lexend', sans-serif;
-            font-size: 0.55rem;
+            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
             font-weight: 500;
             color: var(--muted);
             letter-spacing: 0.02em;
@@ -470,11 +471,12 @@
             padding: 10px 14px;
             align-items: flex-end;
             text-align: right;
+            min-width: 0;
         }
 
         .signature-right .sig-verified {
             font-family: 'Lexend', sans-serif;
-            font-size: 0.55rem;
+            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
             font-weight: 400;
             color: var(--muted);
             letter-spacing: 0.02em;
@@ -489,7 +491,7 @@
 
         .signature-right .sig-time {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.55rem;
+            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
             font-weight: 400;
             color: var(--muted);
             letter-spacing: 0.02em;
@@ -613,20 +615,8 @@
             .signature-left {
                 padding: 8px 12px;
             }
-            .signature-left .signature-name {
-                font-size: 0.6rem;
-            }
-            .signature-left .signature-designation {
-                font-size: 0.5rem;
-            }
             .signature-right {
                 padding: 8px 12px;
-            }
-            .signature-right .sig-verified {
-                font-size: 0.5rem;
-            }
-            .signature-right .sig-time {
-                font-size: 0.5rem;
             }
         }
 
@@ -720,20 +710,8 @@
             .signature-left {
                 padding: 6px 10px;
             }
-            .signature-left .signature-name {
-                font-size: 0.5rem;
-            }
-            .signature-left .signature-designation {
-                font-size: 0.45rem;
-            }
             .signature-right {
                 padding: 6px 10px;
-            }
-            .signature-right .sig-verified {
-                font-size: 0.45rem;
-            }
-            .signature-right .sig-time {
-                font-size: 0.45rem;
             }
         }
 
@@ -743,37 +721,6 @@
             }
             .card {
                 height: calc(100dvh - 32px);
-            }
-        }
-
-        /* Narrow screen - reduce font sizes to keep text on one line */
-        @media (max-width: 380px) {
-            .signature-left .signature-name {
-                font-size: 0.55rem;
-            }
-            .signature-left .signature-designation {
-                font-size: 0.45rem;
-            }
-            .signature-right .sig-verified {
-                font-size: 0.45rem;
-            }
-            .signature-right .sig-time {
-                font-size: 0.45rem;
-            }
-        }
-
-        @media (max-width: 350px) {
-            .signature-left .signature-name {
-                font-size: 0.5rem;
-            }
-            .signature-left .signature-designation {
-                font-size: 0.4rem;
-            }
-            .signature-right .sig-verified {
-                font-size: 0.4rem;
-            }
-            .signature-right .sig-time {
-                font-size: 0.4rem;
             }
         }
     </style>
