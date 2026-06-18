@@ -169,30 +169,34 @@
     .contacts {
       margin-top: 12px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
       gap: 8px;
     }
 
     .contact {
       background: #f8fbfd;
-      padding: 10px;
+      padding: 10px 12px;
       border-radius: 12px;
       font-size: 0.68rem;
       font-weight: 500;
       color: #475569;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       min-width: 0;
+      width: 100%;
     }
 
     .contact svg {
       flex-shrink: 0;
       width: 14px;
       height: 14px;
+    }
+
+    .contact span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .cta {
@@ -312,7 +316,7 @@
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="M22 4L12 13L2 4" />
           </svg>
-          chairman@meridian.com
+          <span>chairman@meridian.com</span>
         </div>
         <!-- Globe -->
         <div class="contact">
@@ -321,7 +325,7 @@
             <line x1="2" y1="12" x2="22" y2="12" />
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
-          meridian.com
+          <span>meridian.com</span>
         </div>
         <!-- Location with full address -->
         <div class="contact">
@@ -329,7 +333,7 @@
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
             <circle cx="12" cy="10" r="3" />
           </svg>
-          123 Broadway, NY 10006
+          <span>123 Broadway, NY 10006</span>
         </div>
       </div>
 
