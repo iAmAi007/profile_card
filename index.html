@@ -374,6 +374,7 @@
             padding: 0;
             margin-top: 0;
             flex-shrink: 0;
+            max-width: 100%;
         }
 
         .date-split-box .date-row {
@@ -390,6 +391,8 @@
             justify-content: center;
             text-align: left;
             min-height: 50px;
+            max-width: 50%;
+            overflow: hidden;
         }
 
         .date-split-box .date-half .date-label {
@@ -407,6 +410,7 @@
             font-size: 0.85rem;
             font-weight: 700;
             line-height: 1.3;
+            white-space: nowrap;
         }
 
         .date-split-box .date-half.issued-half .date-value {
@@ -431,7 +435,9 @@
             border-top: 1px solid rgba(27, 129, 196, 0.15);
             background: rgba(27, 129, 196, 0.02);
             min-height: 60px;
-            gap: 16px;
+            gap: 12px;
+            max-width: 100%;
+            overflow: hidden;
         }
 
         .signature-left {
@@ -441,26 +447,32 @@
             justify-content: center;
             padding: 10px 0 10px 14px;
             min-width: 0;
+            max-width: 50%;
+            overflow: hidden;
         }
 
         .signature-left .signature-name {
             font-family: 'Lexend', sans-serif;
-            font-size: clamp(0.5rem, 1.8vw, 0.7rem);
+            font-size: clamp(0.45rem, 1.6vw, 0.7rem);
             font-weight: 600;
             color: var(--navy);
             letter-spacing: 0.01em;
             line-height: 1.3;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .signature-left .signature-designation {
             font-family: 'Lexend', sans-serif;
-            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
+            font-size: clamp(0.35rem, 1.3vw, 0.55rem);
             font-weight: 500;
             color: var(--muted);
             letter-spacing: 0.02em;
             line-height: 1.3;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .signature-right {
@@ -472,16 +484,21 @@
             align-items: flex-end;
             text-align: right;
             min-width: 0;
+            max-width: 60%;
+            overflow: hidden;
         }
 
         .signature-right .sig-verified {
             font-family: 'Lexend', sans-serif;
-            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
+            font-size: clamp(0.35rem, 1.3vw, 0.55rem);
             font-weight: 400;
             color: var(--muted);
             letter-spacing: 0.02em;
             line-height: 1.4;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
         .signature-right .sig-verified strong {
@@ -491,13 +508,16 @@
 
         .signature-right .sig-time {
             font-family: 'JetBrains Mono', monospace;
-            font-size: clamp(0.4rem, 1.4vw, 0.55rem);
+            font-size: clamp(0.35rem, 1.3vw, 0.55rem);
             font-weight: 400;
             color: var(--muted);
             letter-spacing: 0.02em;
             line-height: 1.4;
             margin-top: 1px;
             white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
         @keyframes calibrate {
@@ -611,7 +631,7 @@
             }
             .signature-section {
                 min-height: 52px;
-                gap: 12px;
+                gap: 8px;
             }
             .signature-left {
                 padding: 8px 0 8px 12px;
@@ -707,7 +727,7 @@
             }
             .signature-section {
                 min-height: 44px;
-                gap: 8px;
+                gap: 6px;
             }
             .signature-left {
                 padding: 6px 0 6px 10px;
