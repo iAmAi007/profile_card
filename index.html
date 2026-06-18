@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Executive Profile · full</title>
+  <title>Executive Profile · clean</title>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -41,6 +41,7 @@
         linear-gradient(135deg, #07131f, #0b1f33, #07131f);
     }
 
+    /* card */
     .card {
       width: min(100%, 420px);
       height: calc(100dvh - 24px);
@@ -54,8 +55,9 @@
       position: relative;
     }
 
+    /* hero image */
     .hero {
-      height: 26%;
+      height: 30%;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
@@ -73,20 +75,22 @@
       background: linear-gradient(180deg, transparent, rgba(8,24,38,.55));
     }
 
+    /* verified badge */
     .verified {
       position: absolute;
       top: 12px;
       left: 12px;
       z-index: 5;
       background: white;
-      padding: 6px 14px;
+      padding: 8px 14px;
       border-radius: 999px;
-      font-size: .7rem;
+      font-size: .75rem;
       font-weight: 700;
       color: var(--primary);
       box-shadow: 0 8px 20px rgba(0,0,0,.12);
     }
 
+    /* AVATAR — in front of content */
     .avatar {
       position: absolute;
       left: 20px;
@@ -106,9 +110,10 @@
       object-fit: cover;
     }
 
+    /* content */
     .content {
-      height: 74%;
-      padding: 34px 20px 12px;
+      height: 70%;
+      padding: 40px 20px 16px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -116,51 +121,50 @@
       background: rgba(255,255,255,.97);
       border-radius: 0 0 28px 28px;
       margin-top: -1px;
-      gap: 4px;
     }
 
     .name {
-      font-size: clamp(1.4rem, 4.5vw, 1.8rem);
+      font-size: clamp(1.6rem, 5vw, 2rem);
       font-weight: 800;
       line-height: 1;
       color: var(--navy);
-      margin-top: 2px;
+      margin-top: 4px;
     }
     .role {
-      margin-top: 3px;
-      font-size: .85rem;
+      margin-top: 8px;
+      font-size: .95rem;
       font-weight: 700;
       color: var(--primary);
     }
     .company {
-      margin-top: 1px;
-      font-size: .75rem;
+      margin-top: 2px;
+      font-size: .82rem;
       color: var(--muted);
     }
 
     .bio {
-      margin-top: 5px;
-      padding-left: 10px;
-      border-left: 3px solid rgba(27,129,196,.2);
-      font-size: .68rem;
-      line-height: 1.5;
+      margin-top: 12px;
+      padding-left: 12px;
+      border-left: 3px solid rgba(27,129,196,.25);
+      font-size: .76rem;
+      line-height: 1.6;
       color: #475569;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
     .tags {
-      margin-top: 5px;
+      margin-top: 12px;
       display: flex;
-      gap: 5px;
+      gap: 8px;
       flex-wrap: wrap;
     }
     .tag {
-      padding: 3px 10px;
+      padding: 6px 10px;
       border-radius: 999px;
-      font-size: .58rem;
+      font-size: .65rem;
       font-weight: 600;
     }
     .blue {
@@ -171,46 +175,44 @@
       background: rgba(242,110,42,.08);
       color: var(--accent);
     }
-    .green {
-      background: rgba(34,197,94,.08);
-      color: #16a34a;
-    }
 
+    /* CONTACTS: THREE items (email, website, location) in one row */
     .contacts {
-      margin-top: 5px;
+      margin-top: 12px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 5px;
+      grid-template-columns: 1fr 1fr 1fr;  /* three equal columns */
+      gap: 8px;
     }
     .contact {
       background: #f0f6fc;
-      padding: 7px 4px;
-      border-radius: 10px;
-      font-size: .58rem;
+      padding: 10px 6px;
+      border-radius: 12px;
+      font-size: .65rem;
       font-weight: 600;
       color: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       min-width: 0;
     }
+    /* allow email to not truncate — override for email */
     .contact-email {
       white-space: normal !important;
       word-break: break-all;
       overflow: visible;
       text-overflow: clip;
-      font-size: .52rem;
-      padding: 7px 4px;
-      line-height: 1.2;
+      font-size: .6rem;
+      padding: 10px 4px;
+      line-height: 1.3;
     }
     .contact svg {
       flex-shrink: 0;
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       fill: var(--primary);
     }
     .contact span {
@@ -225,131 +227,68 @@
       text-overflow: clip;
     }
 
+    /* socials removed */
     .socials {
       display: none;
     }
 
-    .extra-info {
-      margin-top: 4px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
-    }
-    .extra-item {
-      background: #f8fafc;
-      padding: 5px 8px;
-      border-radius: 10px;
-      font-size: .58rem;
-      font-weight: 500;
-      color: #334155;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      border: 1px solid #eef2f6;
-    }
-    .extra-item svg {
-      width: 13px;
-      height: 13px;
-      fill: var(--primary);
-      flex-shrink: 0;
-    }
-    .extra-item strong {
-      font-weight: 700;
-      color: var(--navy);
-      margin-right: 2px;
-    }
-
     .cta {
-      margin-top: 4px;
-      height: 36px;
+      margin-top: 12px;
+      height: 48px;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       background: linear-gradient(135deg, var(--primary), #2899e3);
       color: white;
-      font-size: .68rem;
+      font-size: .78rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
       cursor: default;
-      flex-shrink: 0;
-    }
-
-    /* NEW: fills space below button */
-    .bottom-section {
-      margin-top: 4px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      flex-shrink: 0;
-    }
-    .bottom-item {
-      background: #f8fafc;
-      padding: 5px 8px;
-      border-radius: 10px;
-      font-size: .55rem;
-      font-weight: 500;
-      color: #334155;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      border: 1px solid #eef2f6;
-    }
-    .bottom-item svg {
-      width: 13px;
-      height: 13px;
-      fill: var(--primary);
-      flex-shrink: 0;
-    }
-    .bottom-item strong {
-      font-weight: 700;
-      color: var(--navy);
-      margin-right: 2px;
     }
 
     .stats {
       margin-top: auto;
-      padding-top: 6px;
+      padding-top: 12px;
       border-top: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(4,1fr);
-      gap: 2px;
-      flex-shrink: 0;
+      gap: 4px;
     }
     .stat {
       text-align: center;
     }
     .value {
-      font-size: .85rem;
+      font-size: 1rem;
       font-weight: 800;
       color: var(--navy);
     }
     .label {
-      font-size: .48rem;
-      letter-spacing: 0.5px;
+      font-size: .55rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
       color: #94a3b8;
-      margin-top: 1px;
+      margin-top: 2px;
     }
 
     /* small devices */
     @media (max-height:700px) {
-      .hero { height: 22%; }
-      .content { padding: 28px 14px 8px; gap: 3px; }
-      .bio { -webkit-line-clamp: 2; font-size: .62rem; }
-      .tags { margin-top: 3px; }
-      .contacts { margin-top: 3px; }
-      .extra-info { margin-top: 3px; }
-      .cta { margin-top: 3px; height: 32px; font-size: .6rem; }
-      .bottom-section { margin-top: 3px; }
-      .stats { padding-top: 4px; }
-      .value { font-size: .75rem; }
+      .hero { height: 26%; }
+      .bio { -webkit-line-clamp: 3; font-size: .72rem; }
+      .tags { margin-top: 8px; }
+      .contacts { margin-top: 8px; }
+      .cta { margin-top: 8px; height: 44px; }
     }
     @media (max-width: 400px) {
-      .contacts { gap: 4px; }
-      .contact { font-size: .48rem; padding: 5px 3px; }
-      .contact-email { font-size: .46rem; }
-      .extra-item { font-size: .5rem; padding: 4px 6px; }
-      .bottom-item { font-size: .48rem; padding: 4px 6px; }
-      .extra-item svg, .bottom-item svg { width: 11px; height: 11px; }
+      .contacts {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+      .contact {
+        font-size: .58rem;
+        padding: 8px 4px;
+      }
+      .contact-email {
+        font-size: .55rem;
+      }
     }
   </style>
 </head>
@@ -366,20 +305,21 @@
   <div class="content">
     <div class="name">Jonathan Mercer</div>
     <div class="role">Chairman & CEO</div>
-    <div class="company">Meridian Global Holdings · Est. 1998</div>
+    <div class="company">Meridian Global Holdings</div>
 
     <div class="bio">
-      Transformational enterprise leader scaling global organizations across finance, technology, and sustainable energy.
+      Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation and global expansion.
     </div>
 
     <div class="tags">
       <div class="tag orange">Fortune 100 CEO</div>
       <div class="tag blue">WEF Leader</div>
-      <div class="tag green">ESG Pioneer</div>
-      <div class="tag blue">Harvard Alum</div>
+      <div class="tag blue">ESG Pioneer</div>
     </div>
 
+    <!-- THREE ITEMS: email (no truncate) + website + location (with SVG) -->
     <div class="contacts">
+      <!-- EMAIL: full, no truncation -->
       <div class="contact contact-email">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
           <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
@@ -387,58 +327,34 @@
         </svg>
         <span>chairman@meridian.com</span>
       </div>
+
+      <!-- WEBSITE -->
       <div class="contact">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
         </svg>
         <span>meridian.com</span>
       </div>
+
+      <!-- LOCATION with real SVG -->
       <div class="contact">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
         </svg>
-        <span>123 Broadway, New York, NY 10006</span>
+        <span>New York</span>
       </div>
     </div>
 
-    <div class="extra-info">
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
-        </svg>
-        <span><strong>12</strong> Board Seats</span>
-      </div>
-      <div class="extra-item">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-        </svg>
-        <span><strong>47</strong> Countries</span>
-      </div>
-    </div>
+    <!-- social icons removed -->
+    <div class="socials"></div>
 
     <button class="cta">SECURE CONTACT</button>
 
-    <!-- NEW: fills the space below the button -->
-    <div class="bottom-section">
-      <div class="bottom-item">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-        </svg>
-        <span><strong>28K+</strong> Employees</span>
-      </div>
-      <div class="bottom-item">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg>
-        <span><strong>94%</strong> Retention</span>
-      </div>
-    </div>
-
     <div class="stats">
       <div class="stat"><div class="value">$4.2B</div><div class="label">AUM</div></div>
-      <div class="stat"><div class="value">2030</div><div class="label">Net Zero</div></div>
-      <div class="stat"><div class="value">47</div><div class="label">Countries</div></div>
       <div class="stat"><div class="value">12×</div><div class="label">Boards</div></div>
+      <div class="stat"><div class="value">47</div><div class="label">Countries</div></div>
+      <div class="stat"><div class="value">28K+</div><div class="label">Employees</div></div>
     </div>
   </div>
 </div>
