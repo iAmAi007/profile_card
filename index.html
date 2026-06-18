@@ -169,7 +169,7 @@
     .contacts {
       margin-top: 12px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 8px;
     }
 
@@ -186,6 +186,7 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      min-width: 0;
     }
 
     .contact svg {
