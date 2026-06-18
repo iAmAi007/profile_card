@@ -1,638 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<title>Executive Profile</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-
---primary:#1B81C4;
---accent:#F26E2A;
-
---navy:#081826;
---surface:#ffffff;
---muted:#6b7a8c;
---border:#e7eef5;
-
---radius:24px;
-
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Lexend',sans-serif;
--webkit-tap-highlight-color:transparent;
-}
-
-html,
-body{
-
-width:100%;
-height:100%;
-overflow:hidden;
-
-}
-
-body{
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-padding:12px;
-
-background:
-radial-gradient(circle at top left,
-rgba(27,129,196,.25),
-transparent 35%),
-
-radial-gradient(circle at bottom right,
-rgba(242,110,42,.15),
-transparent 35%),
-
-linear-gradient(
-135deg,
-#07131f,
-#0b1f33,
-#07131f
-);
-
-}
-
-/* CARD */
-
-.card{
-
-width:min(100%,420px);
-
-height:calc(100dvh - 24px);
-
-background:rgba(255,255,255,.97);
-
-backdrop-filter:blur(24px);
-
-border-radius:28px;
-
-overflow:hidden;
-
-display:flex;
-flex-direction:column;
-
-box-shadow:
-0 30px 60px rgba(0,0,0,.20);
-
-}
-
-/* IMAGE */
-
-.hero{
-
-height:30%;
-
-position:relative;
-
-overflow:hidden;
-
-flex-shrink:0;
-
-}
-
-.hero img{
-
-width:100%;
-height:100%;
-object-fit:cover;
-
-}
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-linear-gradient(
-180deg,
-transparent,
-rgba(8,24,38,.55)
-);
-
-}
-
-/* VERIFIED */
-
-.verified{
-
-position:absolute;
-
-top:12px;
-left:12px;
-
-z-index:5;
-
-background:white;
-
-padding:8px 14px;
-
-border-radius:999px;
-
-font-size:.75rem;
-font-weight:700;
-
-color:var(--primary);
-
-box-shadow:
-0 8px 20px rgba(0,0,0,.12);
-
-}
-
-/* AVATAR */
-
-.avatar{
-
-position:absolute;
-
-left:20px;
-bottom:-28px;
-
-width:72px;
-height:72px;
-
-border-radius:50%;
-
-border:4px solid white;
-
-overflow:hidden;
-
-z-index:5;
-
-background:white;
-
-}
-
-.avatar img{
-
-width:100%;
-height:100%;
-object-fit:cover;
-
-}
-
-/* CONTENT */
-
-.content{
-
-height:70%;
-
-padding:
-
-40px
-20px
-16px;
-
-display:flex;
-flex-direction:column;
-
-}
-
-/* NAME */
-
-.name{
-
-font-size:clamp(1.6rem,5vw,2rem);
-
-font-weight:800;
-
-line-height:1;
-
-color:var(--navy);
-
-}
-
-.role{
-
-margin-top:8px;
-
-font-size:.95rem;
-
-font-weight:700;
-
-color:var(--primary);
-
-}
-
-.company{
-
-margin-top:2px;
-
-font-size:.82rem;
-
-color:var(--muted);
-
-}
-
-/* BIO */
-
-.bio{
-
-margin-top:12px;
-
-padding-left:12px;
-
-border-left:3px solid
-rgba(27,129,196,.25);
-
-font-size:.76rem;
-
-line-height:1.6;
-
-color:#475569;
-
-display:-webkit-box;
--webkit-line-clamp:4;
--webkit-box-orient:vertical;
-overflow:hidden;
-
-}
-
-/* TAGS */
-
-.tags{
-
-margin-top:12px;
-
-display:flex;
-gap:8px;
-
-flex-wrap:wrap;
-
-}
-
-.tag{
-
-padding:6px 10px;
-
-border-radius:999px;
-
-font-size:.65rem;
-
-font-weight:600;
-
-}
-
-.blue{
-
-background:
-rgba(27,129,196,.08);
-
-color:var(--primary);
-
-}
-
-.orange{
-
-background:
-rgba(242,110,42,.08);
-
-color:var(--accent);
-
-}
-
-/* CONTACT */
-
-.contacts{
-
-margin-top:12px;
-
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:8px;
-
-}
-
-.contact{
-
-background:#f8fbfd;
-
-padding:10px;
-
-border-radius:12px;
-
-font-size:.68rem;
-
-font-weight:500;
-
-color:#475569;
-
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-
-}
-
-/* SOCIAL */
-
-.socials{
-
-margin-top:12px;
-
-display:flex;
-gap:10px;
-
-}
-
-.social{
-
-width:42px;
-height:42px;
-
-border-radius:12px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-border:1px solid var(--border);
-
-font-weight:700;
-
-color:var(--navy);
-
-transition:.25s;
-
-}
-
-.social:hover{
-
-transform:translateY(-2px);
-
-border-color:var(--primary);
-
-color:var(--primary);
-
-}
-
-/* CTA */
-
-.cta{
-
-margin-top:12px;
-
-height:48px;
-
-border:none;
-
-border-radius:14px;
-
-background:
-linear-gradient(
-135deg,
-var(--primary),
-#2899e3
-);
-
-color:white;
-
-font-size:.78rem;
-
-font-weight:800;
-
-letter-spacing:1px;
-
-}
-
-/* STATS */
-
-.stats{
-
-margin-top:auto;
-
-padding-top:12px;
-
-border-top:1px solid var(--border);
-
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:4px;
-
-}
-
-.stat{
-
-text-align:center;
-
-}
-
-.value{
-
-font-size:1rem;
-
-font-weight:800;
-
-color:var(--navy);
-
-}
-
-.label{
-
-font-size:.55rem;
-
-letter-spacing:1px;
-
-text-transform:uppercase;
-
-color:#94a3b8;
-
-margin-top:2px;
-
-}
-
-/* SMALL DEVICES */
-
-@media (max-height:700px){
-
-.hero{
-height:26%;
-}
-
-.bio{
--webkit-line-clamp:3;
-font-size:.72rem;
-}
-
-.tags{
-margin-top:8px;
-}
-
-.contacts{
-margin-top:8px;
-}
-
-.socials{
-margin-top:8px;
-}
-
-.cta{
-margin-top:8px;
-height:44px;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Executive Profile · clean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lexend', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --primary: #1B81C4;
+      --accent: #F26E2A;
+      --navy: #081826;
+      --surface: #ffffff;
+      --muted: #6b7a8c;
+      --border: #e7eef5;
+      --radius: 24px;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      background:
+        radial-gradient(circle at top left, rgba(27,129,196,.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(242,110,42,.15), transparent 35%),
+        linear-gradient(135deg, #07131f, #0b1f33, #07131f);
+    }
+
+    /* card */
+    .card {
+      width: min(100%, 420px);
+      height: calc(100dvh - 24px);
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(24px);
+      border-radius: 28px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 30px 60px rgba(0,0,0,.20);
+      position: relative; /* for z-index stacking */
+    }
+
+    /* hero image */
+    .hero {
+      height: 30%;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      z-index: 1; /* base layer */
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent, rgba(8,24,38,.55));
+    }
+
+    /* verified badge */
+    .verified {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 5;
+      background: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    }
+
+    /* AVATAR — now in front of content with higher z-index */
+    .avatar {
+      position: absolute;
+      left: 20px;
+      bottom: -28px;      /* half outside hero, half overlapping content */
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 4px solid white;
+      overflow: hidden;
+      z-index: 20;        /* HIGHER than content (z-index:1) and hero */
+      background: white;
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* content */
+    .content {
+      height: 70%;
+      padding: 40px 20px 16px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;         /* content layer, avatar sits above it */
+      background: rgba(255,255,255,.97); /* ensure solid background so avatar pops */
+      border-radius: 0 0 28px 28px;
+      margin-top: -1px;   /* avoid tiny gap */
+    }
+
+    .name {
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-weight: 800;
+      line-height: 1;
+      color: var(--navy);
+      margin-top: 4px;    /* fine-tune spacing after avatar overlap */
+    }
+    .role {
+      margin-top: 8px;
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .company {
+      margin-top: 2px;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    .bio {
+      margin-top: 12px;
+      padding-left: 12px;
+      border-left: 3px solid rgba(27,129,196,.25);
+      font-size: .76rem;
+      line-height: 1.6;
+      color: #475569;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .tags {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .65rem;
+      font-weight: 600;
+    }
+    .blue {
+      background: rgba(27,129,196,.08);
+      color: var(--primary);
+    }
+    .orange {
+      background: rgba(242,110,42,.08);
+      color: var(--accent);
+    }
+
+    /* ONE ROW: website only */
+    .contacts {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .contact {
+      background: #f8fbfd;
+      padding: 10px;
+      border-radius: 12px;
+      font-size: .68rem;
+      font-weight: 500;
+      color: #475569;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .contacts .contact:not(:first-child) {
+      display: none;
+    }
+    .contacts .contact:first-child {
+      grid-column: 1 / -1;
+      text-align: center;
+      background: #f0f6fc;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+    }
+
+    /* socials removed */
+    .socials {
+      display: none;
+    }
+
+    .cta {
+      margin-top: 12px;
+      height: 48px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), #2899e3);
+      color: white;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      cursor: default;
+    }
+
+    .stats {
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 4px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .value {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .label {
+      font-size: .55rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* small devices */
+    @media (max-height:700px) {
+      .hero { height: 26%; }
+      .bio { -webkit-line-clamp: 3; font-size: .72rem; }
+      .tags { margin-top: 8px; }
+      .contacts { margin-top: 8px; }
+      .cta { margin-top: 8px; height: 44px; }
+    }
+  </style>
 </head>
-
 <body>
-
 <div class="card">
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="executive">
+    <div class="verified">✓ VERIFIED</div>
+    <!-- avatar inside hero, but with z-index 20 it will overlap content -->
+    <div class="avatar">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="avatar">
+    </div>
+  </div>
 
-<div class="hero">
+  <div class="content">
+    <div class="name">Jonathan Mercer</div>
+    <div class="role">Chairman & CEO</div>
+    <div class="company">Meridian Global Holdings</div>
 
-<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop">
+    <div class="bio">
+      Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation and global expansion.
+    </div>
 
-<div class="verified">
-✓ VERIFIED
+    <div class="tags">
+      <div class="tag orange">Fortune 100 CEO</div>
+      <div class="tag blue">WEF Leader</div>
+      <div class="tag blue">ESG Pioneer</div>
+    </div>
+
+    <!-- ONE ROW: website only (location & phone removed) -->
+    <div class="contacts">
+      <div class="contact">🌐 meridian.com</div>
+    </div>
+
+    <!-- social icons removed -->
+    <div class="socials"></div>
+
+    <button class="cta">SECURE CONTACT</button>
+
+    <div class="stats">
+      <div class="stat"><div class="value">$4.2B</div><div class="label">AUM</div></div>
+      <div class="stat"><div class="value">12×</div><div class="label">Boards</div></div>
+      <div class="stat"><div class="value">47</div><div class="label">Countries</div></div>
+      <div class="stat"><div class="value">28K+</div><div class="label">Employees</div></div>
+    </div>
+  </div>
 </div>
 
-<div class="avatar">
-
-<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop">
-
-</div>
-
-</div>
-
-<div class="content">
-
-<div class="name">
-Jonathan Mercer
-</div>
-
-<div class="role">
-Chairman & CEO
-</div>
-
-<div class="company">
-Meridian Global Holdings
-</div>
-
-<div class="bio">
-Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation and global expansion.
-</div>
-
-<div class="tags">
-
-<div class="tag orange">
-Fortune 100 CEO
-</div>
-
-<div class="tag blue">
-WEF Leader
-</div>
-
-<div class="tag blue">
-ESG Pioneer
-</div>
-
-</div>
-
-<div class="contacts">
-
-<div class="contact">
-✉ chairman@meridian.com
-</div>
-
-<div class="contact">
-☎ +1 212 555 9087
-</div>
-
-<div class="contact">
-🌐 meridian.com
-</div>
-
-<div class="contact">
-📍 New York
-</div>
-
-</div>
-
-<div class="socials">
-
-<div class="social">in</div>
-<div class="social">𝕏</div>
-<div class="social">◎</div>
-
-</div>
-
-<button class="cta">
-SECURE CONTACT
-</button>
-
-<div class="stats">
-
-<div class="stat">
-<div class="value">$4.2B</div>
-<div class="label">AUM</div>
-</div>
-
-<div class="stat">
-<div class="value">12×</div>
-<div class="label">Boards</div>
-</div>
-
-<div class="stat">
-<div class="value">47</div>
-<div class="label">Countries</div>
-</div>
-
-<div class="stat">
-<div class="value">28K+</div>
-<div class="label">Employees</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
+<!-- tiny interaction (kept from original) -->
 <script>
-
-document.querySelectorAll('.social').forEach(el=>{
-
-el.addEventListener('click',()=>{
-
-el.animate([
-{transform:'scale(1)'},
-{transform:'scale(.92)'},
-{transform:'scale(1)'}
-],{
-duration:180
-})
-
-})
-
-})
-
+  document.querySelectorAll('.social').forEach(el => {
+    el.addEventListener('click', () => {
+      el.animate([
+        {transform: 'scale(1)'},
+        {transform: 'scale(.92)'},
+        {transform: 'scale(1)'}
+      ], {duration: 180})
+    })
+  })
 </script>
-
 </body>
 </html>
