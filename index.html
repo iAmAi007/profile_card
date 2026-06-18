@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Executive Profile · clean</title>
+  <title>Executive Profile · full</title>
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -57,7 +57,7 @@
 
     /* hero image */
     .hero {
-      height: 30%;
+      height: 28%;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
@@ -82,15 +82,15 @@
       left: 12px;
       z-index: 5;
       background: white;
-      padding: 8px 14px;
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: .75rem;
+      font-size: .7rem;
       font-weight: 700;
       color: var(--primary);
       box-shadow: 0 8px 20px rgba(0,0,0,.12);
     }
 
-    /* AVATAR — in front of content */
+    /* AVATAR */
     .avatar {
       position: absolute;
       left: 20px;
@@ -112,8 +112,8 @@
 
     /* content */
     .content {
-      height: 70%;
-      padding: 40px 20px 16px;
+      height: 72%;
+      padding: 36px 20px 14px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -121,50 +121,51 @@
       background: rgba(255,255,255,.97);
       border-radius: 0 0 28px 28px;
       margin-top: -1px;
+      gap: 6px;
     }
 
     .name {
-      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-size: clamp(1.4rem, 4.5vw, 1.8rem);
       font-weight: 800;
       line-height: 1;
       color: var(--navy);
-      margin-top: 4px;
+      margin-top: 2px;
     }
     .role {
-      margin-top: 8px;
-      font-size: .95rem;
+      margin-top: 4px;
+      font-size: .85rem;
       font-weight: 700;
       color: var(--primary);
     }
     .company {
-      margin-top: 2px;
-      font-size: .82rem;
+      margin-top: 1px;
+      font-size: .75rem;
       color: var(--muted);
     }
 
     .bio {
-      margin-top: 12px;
-      padding-left: 12px;
-      border-left: 3px solid rgba(27,129,196,.25);
-      font-size: .76rem;
-      line-height: 1.6;
+      margin-top: 6px;
+      padding-left: 10px;
+      border-left: 3px solid rgba(27,129,196,.2);
+      font-size: .7rem;
+      line-height: 1.5;
       color: #475569;
       display: -webkit-box;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
     .tags {
-      margin-top: 12px;
+      margin-top: 6px;
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
     .tag {
-      padding: 6px 10px;
+      padding: 4px 10px;
       border-radius: 999px;
-      font-size: .65rem;
+      font-size: .6rem;
       font-weight: 600;
     }
     .blue {
@@ -175,40 +176,59 @@
       background: rgba(242,110,42,.08);
       color: var(--accent);
     }
+    .green {
+      background: rgba(34,197,94,.08);
+      color: #16a34a;
+    }
 
-    /* CONTACTS: TWO ITEMS (email + website) in one row */
+    /* CONTACTS: three items */
     .contacts {
-      margin-top: 12px;
+      margin-top: 6px;
       display: grid;
-      grid-template-columns: 1fr 1fr;  /* two equal columns */
-      gap: 8px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
     }
     .contact {
-      background: #f8fbfd;
-      padding: 10px;
-      border-radius: 12px;
-      font-size: .68rem;
-      font-weight: 500;
-      color: #475569;
+      background: #f0f6fc;
+      padding: 8px 4px;
+      border-radius: 10px;
+      font-size: .6rem;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      text-align: center;
+      min-width: 0;
     }
-    /* both items visible, no hidden extras */
-    .contacts .contact {
-      display: block;
+    .contact-email {
+      white-space: normal !important;
+      word-break: break-all;
+      overflow: visible;
+      text-overflow: clip;
+      font-size: .55rem;
+      padding: 8px 4px;
+      line-height: 1.2;
     }
-    /* optional: style first item (email) slightly different? keep uniform */
-    .contacts .contact:first-child {
-      background: #f0f6fc;
-      font-weight: 600;
-      color: var(--navy);
+    .contact svg {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      fill: var(--primary);
     }
-    .contacts .contact:last-child {
-      background: #f0f6fc;
-      font-weight: 600;
-      color: var(--navy);
+    .contact span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .contact-email span {
+      white-space: normal;
+      word-break: break-all;
+      overflow: visible;
+      text-overflow: clip;
     }
 
     /* socials removed */
@@ -216,50 +236,92 @@
       display: none;
     }
 
+    /* EXTRA INFO ROW — fills blank space */
+    .extra-info {
+      margin-top: 4px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .extra-item {
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: .6rem;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #eef2f6;
+    }
+    .extra-item svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--primary);
+      flex-shrink: 0;
+    }
+    .extra-item strong {
+      font-weight: 700;
+      color: var(--navy);
+      margin-right: 2px;
+    }
+
     .cta {
-      margin-top: 12px;
-      height: 48px;
+      margin-top: 6px;
+      height: 40px;
       border: none;
-      border-radius: 14px;
+      border-radius: 12px;
       background: linear-gradient(135deg, var(--primary), #2899e3);
       color: white;
-      font-size: .78rem;
+      font-size: .7rem;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       cursor: default;
     }
 
     .stats {
       margin-top: auto;
-      padding-top: 12px;
+      padding-top: 8px;
       border-top: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(4,1fr);
-      gap: 4px;
+      gap: 2px;
     }
     .stat {
       text-align: center;
     }
     .value {
-      font-size: 1rem;
+      font-size: .9rem;
       font-weight: 800;
       color: var(--navy);
     }
     .label {
-      font-size: .55rem;
-      letter-spacing: 1px;
+      font-size: .5rem;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #94a3b8;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     /* small devices */
     @media (max-height:700px) {
-      .hero { height: 26%; }
-      .bio { -webkit-line-clamp: 3; font-size: .72rem; }
-      .tags { margin-top: 8px; }
-      .contacts { margin-top: 8px; }
-      .cta { margin-top: 8px; height: 44px; }
+      .hero { height: 24%; }
+      .content { padding: 30px 16px 10px; gap: 4px; }
+      .bio { -webkit-line-clamp: 2; font-size: .65rem; }
+      .tags { margin-top: 4px; }
+      .contacts { margin-top: 4px; }
+      .extra-info { margin-top: 3px; }
+      .cta { margin-top: 4px; height: 36px; font-size: .65rem; }
+      .stats { padding-top: 6px; }
+      .value { font-size: .8rem; }
+    }
+    @media (max-width: 400px) {
+      .contacts { gap: 4px; }
+      .contact { font-size: .5rem; padding: 6px 3px; }
+      .contact-email { font-size: .5rem; }
+      .extra-item { font-size: .5rem; padding: 4px 6px; }
+      .extra-item svg { width: 12px; height: 12px; }
     }
   </style>
 </head>
@@ -276,39 +338,69 @@
   <div class="content">
     <div class="name">Jonathan Mercer</div>
     <div class="role">Chairman & CEO</div>
-    <div class="company">Meridian Global Holdings</div>
+    <div class="company">Meridian Global Holdings · Est. 1998</div>
 
     <div class="bio">
-      Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation and global expansion.
+      Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation.
     </div>
 
     <div class="tags">
       <div class="tag orange">Fortune 100 CEO</div>
       <div class="tag blue">WEF Leader</div>
-      <div class="tag blue">ESG Pioneer</div>
+      <div class="tag green">ESG Pioneer</div>
+      <div class="tag blue">Harvard Alum</div>
     </div>
 
-    <!-- TWO ROW: email + website (location & phone removed) -->
+    <!-- CONTACTS: email + website + location -->
     <div class="contacts">
-      <div class="contact">✉ chairman@meridian.com</div>
-      <div class="contact">🌐 meridian.com</div>
+      <div class="contact contact-email">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+          <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+        </svg>
+        <span>chairman@meridian.com</span>
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <span>meridian.com</span>
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>New York</span>
+      </div>
     </div>
 
-    <!-- social icons removed -->
-    <div class="socials"></div>
+    <!-- EXTRA INFO: fills blank space with meaningful data -->
+    <div class="extra-info">
+      <div class="extra-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+        </svg>
+        <span><strong>12</strong> Board Seats</span>
+      </div>
+      <div class="extra-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span><strong>47</strong> Countries</span>
+      </div>
+    </div>
 
     <button class="cta">SECURE CONTACT</button>
 
     <div class="stats">
       <div class="stat"><div class="value">$4.2B</div><div class="label">AUM</div></div>
-      <div class="stat"><div class="value">12×</div><div class="label">Boards</div></div>
-      <div class="stat"><div class="value">47</div><div class="label">Countries</div></div>
       <div class="stat"><div class="value">28K+</div><div class="label">Employees</div></div>
+      <div class="stat"><div class="value">94%</div><div class="label">Retention</div></div>
+      <div class="stat"><div class="value">2030</div><div class="label">Net Zero</div></div>
     </div>
   </div>
 </div>
 
-<!-- tiny interaction (kept from original) -->
 <script>
   document.querySelectorAll('.social').forEach(el => {
     el.addEventListener('click', () => {
