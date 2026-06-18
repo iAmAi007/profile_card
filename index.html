@@ -55,7 +55,7 @@
     }
 
     .hero {
-      height: 24%;
+      height: 26%;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
@@ -107,8 +107,8 @@
     }
 
     .content {
-      height: 76%;
-      padding: 32px 20px 10px;
+      height: 74%;
+      padding: 34px 20px 12px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -116,34 +116,34 @@
       background: rgba(255,255,255,.97);
       border-radius: 0 0 28px 28px;
       margin-top: -1px;
-      gap: 3px;
+      gap: 4px;
     }
 
     .name {
-      font-size: clamp(1.3rem, 4vw, 1.7rem);
+      font-size: clamp(1.4rem, 4.5vw, 1.8rem);
       font-weight: 800;
       line-height: 1;
       color: var(--navy);
       margin-top: 2px;
     }
     .role {
-      margin-top: 2px;
-      font-size: .8rem;
+      margin-top: 3px;
+      font-size: .85rem;
       font-weight: 700;
       color: var(--primary);
     }
     .company {
       margin-top: 1px;
-      font-size: .7rem;
+      font-size: .75rem;
       color: var(--muted);
     }
 
     .bio {
-      margin-top: 4px;
+      margin-top: 5px;
       padding-left: 10px;
       border-left: 3px solid rgba(27,129,196,.2);
-      font-size: .64rem;
-      line-height: 1.4;
+      font-size: .68rem;
+      line-height: 1.5;
       color: #475569;
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -152,15 +152,15 @@
     }
 
     .tags {
-      margin-top: 4px;
+      margin-top: 5px;
       display: flex;
-      gap: 4px;
+      gap: 5px;
       flex-wrap: wrap;
     }
     .tag {
       padding: 3px 10px;
       border-radius: 999px;
-      font-size: .55rem;
+      font-size: .58rem;
       font-weight: 600;
     }
     .blue {
@@ -176,11 +176,10 @@
       color: #16a34a;
     }
 
-    /* CONTACTS: 3 columns — email, website, location (expanded) */
     .contacts {
-      margin-top: 4px;
+      margin-top: 5px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1.8fr; /* location gets more space */
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 5px;
     }
     .contact {
@@ -225,46 +224,22 @@
       overflow: visible;
       text-overflow: clip;
     }
-    /* Location gets extra width and more content */
-    .contact-location {
-      background: #e8f0fe;
-      font-weight: 600;
-      font-size: .6rem;
-      padding: 7px 8px;
-      justify-content: center;
-      gap: 6px;
-      white-space: normal;
-      overflow: visible;
-      text-overflow: clip;
-      flex: 1;
-    }
-    .contact-location span {
-      white-space: normal;
-      overflow: visible;
-      text-overflow: clip;
-    }
-    .contact-location .location-detail {
-      font-weight: 400;
-      color: #475569;
-      font-size: .55rem;
-      margin-left: 2px;
-    }
 
     .socials {
       display: none;
     }
 
     .extra-info {
-      margin-top: 3px;
+      margin-top: 4px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px;
+      gap: 5px;
     }
     .extra-item {
       background: #f8fafc;
-      padding: 4px 8px;
+      padding: 5px 8px;
       border-radius: 10px;
-      font-size: .55rem;
+      font-size: .58rem;
       font-weight: 500;
       color: #334155;
       display: flex;
@@ -273,8 +248,8 @@
       border: 1px solid #eef2f6;
     }
     .extra-item svg {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       fill: var(--primary);
       flex-shrink: 0;
     }
@@ -285,31 +260,32 @@
     }
 
     .cta {
-      margin-top: 3px;
-      height: 34px;
+      margin-top: 4px;
+      height: 36px;
       border: none;
       border-radius: 12px;
       background: linear-gradient(135deg, var(--primary), #2899e3);
       color: white;
-      font-size: .65rem;
+      font-size: .68rem;
       font-weight: 800;
       letter-spacing: 0.5px;
       cursor: default;
       flex-shrink: 0;
     }
 
+    /* NEW: fills space below button */
     .bottom-section {
-      margin-top: 3px;
+      margin-top: 4px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px;
+      gap: 5px;
       flex-shrink: 0;
     }
     .bottom-item {
       background: #f8fafc;
-      padding: 4px 8px;
+      padding: 5px 8px;
       border-radius: 10px;
-      font-size: .52rem;
+      font-size: .55rem;
       font-weight: 500;
       color: #334155;
       display: flex;
@@ -318,8 +294,8 @@
       border: 1px solid #eef2f6;
     }
     .bottom-item svg {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       fill: var(--primary);
       flex-shrink: 0;
     }
@@ -331,7 +307,7 @@
 
     .stats {
       margin-top: auto;
-      padding-top: 5px;
+      padding-top: 6px;
       border-top: 1px solid var(--border);
       display: grid;
       grid-template-columns: repeat(4,1fr);
@@ -342,41 +318,38 @@
       text-align: center;
     }
     .value {
-      font-size: .8rem;
+      font-size: .85rem;
       font-weight: 800;
       color: var(--navy);
     }
     .label {
-      font-size: .45rem;
+      font-size: .48rem;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #94a3b8;
       margin-top: 1px;
     }
 
+    /* small devices */
     @media (max-height:700px) {
-      .hero { height: 20%; }
-      .content { padding: 26px 14px 6px; gap: 2px; }
-      .bio { -webkit-line-clamp: 2; font-size: .58rem; }
+      .hero { height: 22%; }
+      .content { padding: 28px 14px 8px; gap: 3px; }
+      .bio { -webkit-line-clamp: 2; font-size: .62rem; }
       .tags { margin-top: 3px; }
       .contacts { margin-top: 3px; }
-      .extra-info { margin-top: 2px; }
-      .cta { margin-top: 2px; height: 30px; font-size: .58rem; }
-      .bottom-section { margin-top: 2px; }
+      .extra-info { margin-top: 3px; }
+      .cta { margin-top: 3px; height: 32px; font-size: .6rem; }
+      .bottom-section { margin-top: 3px; }
       .stats { padding-top: 4px; }
-      .value { font-size: .7rem; }
-      .contact-location { font-size: .52rem; padding: 5px 6px; }
-      .contact-location .location-detail { font-size: .48rem; }
+      .value { font-size: .75rem; }
     }
     @media (max-width: 400px) {
-      .contacts { gap: 3px; grid-template-columns: 1fr 1fr 1.6fr; }
-      .contact { font-size: .46rem; padding: 4px 3px; }
-      .contact-email { font-size: .44rem; }
-      .contact-location { font-size: .48rem; padding: 4px 5px; }
-      .contact-location .location-detail { font-size: .44rem; }
-      .extra-item { font-size: .48rem; padding: 3px 5px; }
-      .bottom-item { font-size: .44rem; padding: 3px 5px; }
-      .extra-item svg, .bottom-item svg { width: 10px; height: 10px; }
+      .contacts { gap: 4px; }
+      .contact { font-size: .48rem; padding: 5px 3px; }
+      .contact-email { font-size: .46rem; }
+      .extra-item { font-size: .5rem; padding: 4px 6px; }
+      .bottom-item { font-size: .48rem; padding: 4px 6px; }
+      .extra-item svg, .bottom-item svg { width: 11px; height: 11px; }
     }
   </style>
 </head>
@@ -406,7 +379,6 @@
       <div class="tag blue">Harvard Alum</div>
     </div>
 
-    <!-- CONTACTS: email + website + LOCATION (expanded) -->
     <div class="contacts">
       <div class="contact contact-email">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -421,15 +393,11 @@
         </svg>
         <span>meridian.com</span>
       </div>
-      <!-- EXPANDED LOCATION with extra info -->
-      <div class="contact contact-location">
+      <div class="contact">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
         </svg>
-        <span>
-          New York, NY
-          <span class="location-detail">· Global HQ · 1 World Trade</span>
-        </span>
+        <span>New York</span>
       </div>
     </div>
 
@@ -450,6 +418,7 @@
 
     <button class="cta">SECURE CONTACT</button>
 
+    <!-- NEW: fills the space below the button -->
     <div class="bottom-section">
       <div class="bottom-item">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
