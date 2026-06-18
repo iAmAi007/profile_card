@@ -1,660 +1,847 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
-  <title>Executive Profile • Imran Amran Khan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #1B81C4;
-      --accent: #F26E2A;
-      --navy: #081826;
-      --surface: #ffffff;
-      --muted: #6b7a8c;
-      --border: #eef2f6;
-      --radius: 24px;
-      --box-radius: 14px;
-      --bg-soft: #fcfcfc;
-      --scale: 0.97;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+    <title>Executive Profile • Imran Amran Khan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #1B81C4;
+            --accent: #F26E2A;
+            --navy: #081826;
+            --surface: #ffffff;
+            --muted: #6b7a8c;
+            --border: #eef2f6;
+            --radius: 24px;
+            --box-radius: 14px;
+            --bg-soft: #fcfcfc;
+            --scale: 0.97;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Lexend', sans-serif;
-    }
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Lexend', sans-serif;
+        }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(27,129,196,0.25), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(242,110,42,0.15), transparent 35%),
-        linear-gradient(135deg, #07131f, #0b1f33, #07131f);
-    }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px;
+            background:
+                radial-gradient(circle at top left, rgba(27, 129, 196, 0.25), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(242, 110, 42, 0.15), transparent 35%),
+                linear-gradient(135deg, #07131f, #0b1f33, #07131f);
+        }
 
-    .card {
-      position: relative;
-      width: 100%;
-      max-width: 400px;
-      height: calc(100dvh - 48px);
-      max-height: 780px;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(24px);
-      border-radius: 32px;
-      border: 2px solid rgba(255,255,255,0.5);
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.3), 0 30px 60px rgba(0,0,0,0.20);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transform: scale(var(--scale));
-    }
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: calc(100dvh - 48px);
+            max-height: 780px;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(24px);
+            border-radius: 32px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 30px 60px rgba(0, 0, 0, 0.20);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: scale(var(--scale));
+        }
 
-    .bottom-border {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        var(--primary) 15%, 
-        var(--primary) 50%, 
-        var(--primary) 85%, 
-        transparent 100%
-      );
-      opacity: 0.6;
-      border-radius: 0 0 32px 32px;
-      z-index: 10;
-    }
+        .bottom-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    transparent 0%,
+                    var(--primary) 15%,
+                    var(--primary) 50%,
+                    var(--primary) 85%,
+                    transparent 100%);
+            opacity: 0.6;
+            border-radius: 0 0 32px 32px;
+            z-index: 10;
+        }
 
-    .hero {
-      position: relative;
-      flex-shrink: 0;
-      height: 29%;
-      min-height: 115px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 20px;
-    }
+        .hero {
+            position: relative;
+            flex-shrink: 0;
+            height: 29%;
+            min-height: 115px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
 
-    .hero img.hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+        .hero img.hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 35%, rgba(8,24,38,0.45) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 35%, rgba(8, 24, 38, 0.45) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
 
-    .hero .punch-hole {
-      position: absolute;
-      top: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 20px;
-      border-radius: 999px;
-      background: #0b1f33;
-      border: none;
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6), inset 0 -1px 2px rgba(255, 255, 255, 0.05);
-      z-index: 5;
-      pointer-events: none;
-    }
+        .hero .punch-hole {
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 20px;
+            border-radius: 999px;
+            background: #0b1f33;
+            border: none;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6), inset 0 -1px 2px rgba(255, 255, 255, 0.05);
+            z-index: 5;
+            pointer-events: none;
+        }
 
-    .avatar {
-      position: relative;
-      z-index: 30;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 4px solid white;
-      overflow: hidden;
-      background: white;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-      flex-shrink: 0;
-    }
+        .avatar {
+            position: relative;
+            z-index: 30;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+            flex-shrink: 0;
+        }
 
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
-    .hero-id-badge {
-      position: relative;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(8px);
-      padding: 6px 14px 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.3);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex-shrink: 0;
-    }
+        .hero-id-badge {
+            position: relative;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            padding: 6px 14px 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            flex-shrink: 0;
+        }
 
-    .hero-id-badge .id-label {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      line-height: 1.2;
-      display: flex;
-      align-items: center;
-    }
+        .hero-id-badge .id-label {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--muted);
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+        }
 
-    .hero-id-badge .id-value {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-      display: flex;
-      align-items: center;
-    }
+        .hero-id-badge .id-value {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+        }
 
-    .content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding: 16px 16px 0 16px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      min-height: 0;
-    }
-    .content::-webkit-scrollbar {
-      display: none;
-    }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 16px 16px 0 16px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            min-height: 0;
+        }
+        .content::-webkit-scrollbar {
+            display: none;
+        }
 
-    .identity {
-      padding: 0 2px;
-      margin-bottom: 12px;
-      flex-shrink: 0;
-    }
+        .identity {
+            padding: 0 2px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
 
-    .identity .company-divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border) 0%, var(--primary) 50%, var(--border) 100%);
-      margin-top: 6px;
-      opacity: 0.5;
-    }
+        .identity .company-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border) 0%, var(--primary) 50%, var(--border) 100%);
+            margin-top: 6px;
+            opacity: 0.5;
+        }
 
-    .name {
-      font-size: clamp(1.45rem, 5vw, 1.9rem);
-      line-height: 1.1;
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
-    .name .first {
-      font-weight: 500;
-    }
-    .name .middle {
-      font-weight: 600;
-    }
-    .name .last {
-      font-weight: 600;
-    }
+        .name {
+            font-size: clamp(1.45rem, 5vw, 1.9rem);
+            line-height: 1.1;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+        .name .first {
+            font-weight: 500;
+        }
+        .name .middle {
+            font-weight: 600;
+        }
+        .name .last {
+            font-weight: 600;
+        }
 
-    .specialization {
-      margin-top: 2px;
-      font-size: clamp(0.95rem, 3.2vw, 1.2rem);
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.01em;
-    }
+        .specialization {
+            margin-top: 2px;
+            font-size: clamp(0.95rem, 3.2vw, 1.2rem);
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 0.01em;
+        }
 
-    .company {
-      margin-top: 2px;
-      font-size: 0.7rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
+        .company {
+            margin-top: 2px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--muted);
+        }
 
-    .credentials {
-      padding: 0 2px;
-      margin-top: 2px;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
+        .credentials {
+            padding: 0 2px;
+            margin-top: 2px;
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
 
-    .vb-box {
-      background: var(--bg-soft);
-      border: 0.5px solid var(--border);
-      border-radius: var(--box-radius);
-      padding: 10px 14px;
-      transition: border-color 0.2s;
-      flex-shrink: 0;
-    }
+        .vb-box {
+            background: var(--bg-soft);
+            border: 0.5px solid var(--border);
+            border-radius: var(--box-radius);
+            padding: 10px 14px;
+            transition: border-color 0.2s;
+            flex-shrink: 0;
+        }
 
-    .vb-box.orange-border {
-      border-color: rgba(242, 110, 42, 0.5);
-      background: rgba(242, 110, 42, 0.02);
-    }
+        .vb-box.orange-border {
+            border-color: rgba(242, 110, 42, 0.5);
+            background: rgba(242, 110, 42, 0.02);
+        }
 
-    .vb-box.black-border {
-      border-color: rgba(0, 0, 0, 0.25);
-      background: rgba(0, 0, 0, 0.01);
-    }
+        .vb-box.black-border {
+            border-color: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.01);
+        }
 
-    .vb-box.blue-border {
-      border-color: rgba(27, 129, 196, 0.3);
-      background: rgba(27, 129, 196, 0.02);
-    }
+        .vb-box.blue-border {
+            border-color: rgba(27, 129, 196, 0.3);
+            background: rgba(27, 129, 196, 0.02);
+        }
 
-    .vb-box .vb-header {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 6px 8px;
-      margin-bottom: 3px;
-    }
+        .vb-box .vb-header {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 6px 8px;
+            margin-bottom: 3px;
+        }
 
-    .vb-box .vb-header .vb-title {
-      display: inline-block;
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 2px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      background: rgba(27, 129, 196, 0.06);
-      color: var(--primary);
-      border-color: rgba(27, 129, 196, 0.12);
-      flex-shrink: 0;
-    }
+        .vb-box .vb-header .vb-title {
+            display: inline-block;
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 2px 12px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: rgba(27, 129, 196, 0.06);
+            color: var(--primary);
+            border-color: rgba(27, 129, 196, 0.12);
+            flex-shrink: 0;
+        }
 
-    .vb-box .vb-header .vb-title.orange-pill {
-      background: rgba(242, 110, 42, 0.08);
-      color: var(--accent);
-      border-color: rgba(242, 110, 42, 0.18);
-    }
+        .vb-box .vb-header .vb-title.orange-pill {
+            background: rgba(242, 110, 42, 0.08);
+            color: var(--accent);
+            border-color: rgba(242, 110, 42, 0.18);
+        }
 
-    .vb-box .vb-header .vb-title.black-pill {
-      background: rgba(0, 0, 0, 0.04);
-      color: #333;
-      border-color: rgba(0, 0, 0, 0.12);
-    }
+        .vb-box .vb-header .vb-title.black-pill {
+            background: rgba(0, 0, 0, 0.04);
+            color: #333;
+            border-color: rgba(0, 0, 0, 0.12);
+        }
 
-    .vb-box .vb-header .header-inline-text {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--muted);
-      line-height: 1.4;
-      word-break: break-word;
-      flex: 1 1 auto;
-      min-width: 60px;
-    }
+        .vb-box .vb-header .header-inline-text {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--muted);
+            line-height: 1.4;
+            word-break: break-word;
+            flex: 1 1 auto;
+            min-width: 60px;
+        }
 
-    .vb-box .vb-header .header-inline-text.blue-text {
-      color: var(--primary);
-      font-weight: 600;
-    }
+        .vb-box .vb-header .header-inline-text.blue-text {
+            color: var(--primary);
+            font-weight: 600;
+        }
 
-    .vb-box .vb-header .header-inline-text.orange-text {
-      color: var(--accent);
-      font-weight: 600;
-    }
+        .vb-box .vb-header .header-inline-text.orange-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
 
-    .vb-box .vb-header .header-inline-text.black-text {
-      color: #333;
-      font-weight: 500;
-    }
+        .vb-box .vb-header .header-inline-text.black-text {
+            color: #333;
+            font-weight: 500;
+        }
 
-    .vb-box .vb-value {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.4;
-      padding-left: 2px;
-      margin-top: 2px;
-    }
+        .vb-box .vb-value {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.4;
+            padding-left: 2px;
+            margin-top: 2px;
+        }
 
-    .vb-box .vb-value.orange-value {
-      color: var(--accent);
-    }
+        .vb-box .vb-value.orange-value {
+            color: var(--accent);
+        }
 
-    .vb-box .vb-value.black-value {
-      color: #222;
-    }
+        .vb-box .vb-value.black-value {
+            color: #222;
+        }
 
-    .vb-box.access .vb-value .zone-desc {
-      display: block;
-      font-size: 0.65rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-top: 1px;
-      line-height: 1.5;
-      word-wrap: break-word;
-    }
+        .vb-box.access .vb-value .zone-desc {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--muted);
+            margin-top: 1px;
+            line-height: 1.5;
+            word-wrap: break-word;
+        }
 
-    .date-split-box {
-      display: flex;
-      flex-direction: column;
-      background: var(--bg-soft);
-      border: 0.5px solid rgba(27, 129, 196, 0.3);
-      border-radius: var(--box-radius);
-      overflow: hidden;
-      padding: 0;
-      margin-top: 0;
-      flex-shrink: 0;
-    }
+        .date-split-box {
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-soft);
+            border: 0.5px solid rgba(27, 129, 196, 0.3);
+            border-radius: var(--box-radius);
+            overflow: hidden;
+            padding: 0;
+            margin-top: 0;
+            flex-shrink: 0;
+        }
 
-    .date-split-box .date-row {
-      display: flex;
-      align-items: stretch;
-    }
+        .date-split-box .date-row {
+            display: flex;
+            align-items: stretch;
+        }
 
-    .date-split-box .date-half {
-      flex: 1 1 50%;
-      padding: 10px 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      text-align: left;
-      min-height: 50px;
-    }
+        .date-split-box .date-half {
+            flex: 1 1 50%;
+            padding: 10px 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            text-align: left;
+            min-height: 50px;
+        }
 
-    .date-split-box .date-half .date-label {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      margin-bottom: 1px;
-    }
+        .date-split-box .date-half .date-label {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            margin-bottom: 1px;
+        }
 
-    .date-split-box .date-half .date-value {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 700;
-      line-height: 1.3;
-    }
+        .date-split-box .date-half .date-value {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
 
-    .date-split-box .date-half.issued-half .date-value {
-      color: var(--primary);
-    }
+        .date-split-box .date-half.issued-half .date-value {
+            color: var(--primary);
+        }
 
-    .date-split-box .date-half.expires-half .date-value {
-      color: var(--accent);
-    }
+        .date-split-box .date-half.expires-half .date-value {
+            color: var(--accent);
+        }
 
-    .date-split-box .divider-line {
-      width: 1px;
-      background: var(--border);
-      flex-shrink: 0;
-    }
+        .date-split-box .divider-line {
+            width: 1px;
+            background: var(--border);
+            flex-shrink: 0;
+        }
 
-    .signature-section {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 14px 14px 14px 14px;
-      border-top: 1px solid rgba(27, 129, 196, 0.15);
-      background: rgba(27, 129, 196, 0.02);
-      flex-wrap: wrap;
-      gap: 4px 8px;
-    }
+        .signature-section {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 12px 14px 12px 14px;
+            border-top: 1px solid rgba(27, 129, 196, 0.15);
+            background: rgba(27, 129, 196, 0.02);
+            flex-wrap: wrap;
+            gap: 6px 12px;
+        }
 
-    .signature-left {
-      display: flex;
-      flex-direction: column;
-    }
+        .signature-left {
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
 
-    .signature-left .signature-name {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.01em;
-    }
+        .signature-left .signature-name {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--navy);
+            letter-spacing: 0.01em;
+            white-space: nowrap;
+        }
 
-    .signature-left .signature-designation {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.55rem;
-      font-weight: 500;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      margin-top: -1px;
-    }
+        .signature-left .signature-designation {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 500;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            margin-top: -1px;
+            white-space: nowrap;
+        }
 
-    .signature-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
-      flex-shrink: 0;
-    }
+        .signature-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            text-align: right;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
 
-    .signature-right .sig-verified {
-      font-family: 'Lexend', sans-serif;
-      font-size: 0.5rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      line-height: 1.3;
-    }
+        .signature-right .sig-verified {
+            font-family: 'Lexend', sans-serif;
+            font-size: 0.5rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            word-break: break-word;
+            text-align: right;
+            width: 100%;
+        }
 
-    .signature-right .sig-verified strong {
-      font-weight: 500;
-      color: var(--muted);
-    }
+        .signature-right .sig-verified strong {
+            font-weight: 500;
+            color: var(--muted);
+            white-space: nowrap;
+        }
 
-    .signature-right .sig-time {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.5rem;
-      font-weight: 400;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      line-height: 1.3;
-    }
+        .signature-right .sig-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.5rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
 
-    @keyframes calibrate {
-      from { opacity: 0; transform: translateX(-6px); }
-      to   { opacity: 1; transform: translateX(0); }
-    }
+        @keyframes calibrate {
+            from {
+                opacity: 0;
+                transform: translateX(-6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-    .animate { animation: calibrate 0.35s cubic-bezier(0.22,1,0.36,1) both; }
-    .delay-1 { animation-delay: 0.08s; }
-    .delay-2 { animation-delay: 0.16s; }
-    .delay-3 { animation-delay: 0.24s; }
-    .delay-4 { animation-delay: 0.32s; }
+        .animate {
+            animation: calibrate 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .delay-1 {
+            animation-delay: 0.08s;
+        }
+        .delay-2 {
+            animation-delay: 0.16s;
+        }
+        .delay-3 {
+            animation-delay: 0.24s;
+        }
+        .delay-4 {
+            animation-delay: 0.32s;
+        }
 
-    @media (max-height: 640px) {
-      body { padding: 16px; }
-      .card { height: calc(100dvh - 32px); border-radius: 28px; }
-      .bottom-border { border-radius: 0 0 28px 28px; }
-      .hero { height: 26%; min-height: 96px; padding: 0 16px; }
-      .hero .punch-hole { width: 48px; height: 16px; top: 10px; }
-      .avatar { width: 80px; height: 80px; border-width: 3px; }
-      .hero-id-badge { padding: 4px 10px 4px 8px; }
-      .hero-id-badge .id-label { font-size: 0.55rem; }
-      .hero-id-badge .id-value { font-size: 0.7rem; }
-      .content { padding: 12px 14px 0 14px; }
-      .identity { margin-bottom: 8px; }
-      .credentials { gap: 5px; }
-      .name { font-size: clamp(1.2rem, 4.2vw, 1.5rem); }
-      .specialization { font-size: clamp(0.8rem, 2.8vw, 1.0rem); }
-      .company { font-size: 0.62rem; }
-      .identity .company-divider { margin-top: 4px; }
-      .vb-box { padding: 8px 12px; }
-      .vb-box .vb-title { font-size: 0.5rem; padding: 1px 10px; }
-      .vb-box .header-inline-text { font-size: 0.65rem; }
-      .vb-box .vb-value { font-size: 0.7rem; }
-      .vb-box.access .vb-value .zone-desc { font-size: 0.6rem; }
-      .date-split-box .date-half { padding: 8px 12px; min-height: 44px; }
-      .date-split-box .date-half .date-label { font-size: 0.5rem; }
-      .date-split-box .date-half .date-value { font-size: 0.75rem; }
-      .signature-section { padding: 10px 12px 10px 12px; }
-      .signature-left .signature-name { font-size: 0.6rem; }
-      .signature-left .signature-designation { font-size: 0.5rem; }
-      .signature-right .sig-verified { font-size: 0.45rem; }
-      .signature-right .sig-time { font-size: 0.45rem; }
-    }
+        @media (max-height: 640px) {
+            body {
+                padding: 16px;
+            }
+            .card {
+                height: calc(100dvh - 32px);
+                border-radius: 28px;
+            }
+            .bottom-border {
+                border-radius: 0 0 28px 28px;
+            }
+            .hero {
+                height: 26%;
+                min-height: 96px;
+                padding: 0 16px;
+            }
+            .hero .punch-hole {
+                width: 48px;
+                height: 16px;
+                top: 10px;
+            }
+            .avatar {
+                width: 80px;
+                height: 80px;
+                border-width: 3px;
+            }
+            .hero-id-badge {
+                padding: 4px 10px 4px 8px;
+            }
+            .hero-id-badge .id-label {
+                font-size: 0.55rem;
+            }
+            .hero-id-badge .id-value {
+                font-size: 0.7rem;
+            }
+            .content {
+                padding: 12px 14px 0 14px;
+            }
+            .identity {
+                margin-bottom: 8px;
+            }
+            .credentials {
+                gap: 5px;
+            }
+            .name {
+                font-size: clamp(1.2rem, 4.2vw, 1.5rem);
+            }
+            .specialization {
+                font-size: clamp(0.8rem, 2.8vw, 1.0rem);
+            }
+            .company {
+                font-size: 0.62rem;
+            }
+            .identity .company-divider {
+                margin-top: 4px;
+            }
+            .vb-box {
+                padding: 8px 12px;
+            }
+            .vb-box .vb-title {
+                font-size: 0.5rem;
+                padding: 1px 10px;
+            }
+            .vb-box .header-inline-text {
+                font-size: 0.65rem;
+            }
+            .vb-box .vb-value {
+                font-size: 0.7rem;
+            }
+            .vb-box.access .vb-value .zone-desc {
+                font-size: 0.6rem;
+            }
+            .date-split-box .date-half {
+                padding: 8px 12px;
+                min-height: 44px;
+            }
+            .date-split-box .date-half .date-label {
+                font-size: 0.5rem;
+            }
+            .date-split-box .date-half .date-value {
+                font-size: 0.75rem;
+            }
+            .signature-section {
+                padding: 10px 12px 10px 12px;
+                gap: 4px 8px;
+            }
+            .signature-left .signature-name {
+                font-size: 0.6rem;
+            }
+            .signature-left .signature-designation {
+                font-size: 0.5rem;
+            }
+            .signature-right .sig-verified {
+                font-size: 0.45rem;
+            }
+            .signature-right .sig-time {
+                font-size: 0.45rem;
+            }
+        }
 
-    @media (max-height: 560px) {
-      body { padding: 12px; }
-      .card { max-height: 95dvh; height: calc(100dvh - 24px); border-radius: 24px; }
-      .bottom-border { border-radius: 0 0 24px 24px; }
-      .hero { height: 23%; min-height: 78px; padding: 0 12px; }
-      .hero .punch-hole { width: 40px; height: 14px; top: 8px; }
-      .avatar { width: 64px; height: 64px; border-width: 3px; }
-      .hero-id-badge { padding: 3px 8px 3px 6px; gap: 4px; }
-      .hero-id-badge .id-label { font-size: 0.45rem; }
-      .hero-id-badge .id-value { font-size: 0.6rem; }
-      .content { padding: 8px 10px 0 10px; }
-      .identity { margin-bottom: 6px; }
-      .credentials { gap: 4px; }
-      .name { font-size: clamp(0.95rem, 3.6vw, 1.2rem); }
-      .specialization { font-size: clamp(0.65rem, 2.2vw, 0.8rem); }
-      .company { font-size: 0.55rem; }
-      .identity .company-divider { margin-top: 3px; }
-      .vb-box { padding: 6px 10px; }
-      .vb-box .vb-title { font-size: 0.45rem; padding: 1px 8px; }
-      .vb-box .header-inline-text { font-size: 0.55rem; }
-      .vb-box .vb-value { font-size: 0.6rem; }
-      .vb-box.access .vb-value .zone-desc { font-size: 0.5rem; }
-      .date-split-box .date-half { padding: 6px 10px; min-height: 38px; }
-      .date-split-box .date-half .date-label { font-size: 0.45rem; }
-      .date-split-box .date-half .date-value { font-size: 0.65rem; }
-      .signature-section { padding: 8px 10px 8px 10px; }
-      .signature-left .signature-name { font-size: 0.5rem; }
-      .signature-left .signature-designation { font-size: 0.45rem; }
-      .signature-right .sig-verified { font-size: 0.4rem; }
-      .signature-right .sig-time { font-size: 0.4rem; }
-    }
+        @media (max-height: 560px) {
+            body {
+                padding: 12px;
+            }
+            .card {
+                max-height: 95dvh;
+                height: calc(100dvh - 24px);
+                border-radius: 24px;
+            }
+            .bottom-border {
+                border-radius: 0 0 24px 24px;
+            }
+            .hero {
+                height: 23%;
+                min-height: 78px;
+                padding: 0 12px;
+            }
+            .hero .punch-hole {
+                width: 40px;
+                height: 14px;
+                top: 8px;
+            }
+            .avatar {
+                width: 64px;
+                height: 64px;
+                border-width: 3px;
+            }
+            .hero-id-badge {
+                padding: 3px 8px 3px 6px;
+                gap: 4px;
+            }
+            .hero-id-badge .id-label {
+                font-size: 0.45rem;
+            }
+            .hero-id-badge .id-value {
+                font-size: 0.6rem;
+            }
+            .content {
+                padding: 8px 10px 0 10px;
+            }
+            .identity {
+                margin-bottom: 6px;
+            }
+            .credentials {
+                gap: 4px;
+            }
+            .name {
+                font-size: clamp(0.95rem, 3.6vw, 1.2rem);
+            }
+            .specialization {
+                font-size: clamp(0.65rem, 2.2vw, 0.8rem);
+            }
+            .company {
+                font-size: 0.55rem;
+            }
+            .identity .company-divider {
+                margin-top: 3px;
+            }
+            .vb-box {
+                padding: 6px 10px;
+            }
+            .vb-box .vb-title {
+                font-size: 0.45rem;
+                padding: 1px 8px;
+            }
+            .vb-box .header-inline-text {
+                font-size: 0.55rem;
+            }
+            .vb-box .vb-value {
+                font-size: 0.6rem;
+            }
+            .vb-box.access .vb-value .zone-desc {
+                font-size: 0.5rem;
+            }
+            .date-split-box .date-half {
+                padding: 6px 10px;
+                min-height: 38px;
+            }
+            .date-split-box .date-half .date-label {
+                font-size: 0.45rem;
+            }
+            .date-split-box .date-half .date-value {
+                font-size: 0.65rem;
+            }
+            .signature-section {
+                padding: 8px 10px 8px 10px;
+                gap: 3px 6px;
+            }
+            .signature-left .signature-name {
+                font-size: 0.5rem;
+            }
+            .signature-left .signature-designation {
+                font-size: 0.45rem;
+            }
+            .signature-right .sig-verified {
+                font-size: 0.4rem;
+            }
+            .signature-right .sig-time {
+                font-size: 0.4rem;
+            }
+        }
 
-    @media (max-width: 420px) {
-      body { padding: 16px; }
-      .card { height: calc(100dvh - 32px); }
-    }
-  </style>
+        @media (max-width: 420px) {
+            body {
+                padding: 16px;
+            }
+            .card {
+                height: calc(100dvh - 32px);
+            }
+        }
+
+        /* Android-specific fix for signature wrapping */
+        @media (max-width: 380px) {
+            .signature-section {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .signature-right {
+                align-items: flex-start;
+                text-align: left;
+                width: 100%;
+            }
+            .signature-right .sig-verified {
+                text-align: left;
+            }
+            .signature-right .sig-time {
+                white-space: normal;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="bottom-border"></div>
+    <div class="card">
+        <div class="bottom-border"></div>
 
-    <div class="hero animate">
-      <img class="hero-bg" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80&auto=format&fit=crop" alt="Airplane on runway at sunset" loading="eager" />
-      <div class="punch-hole"></div>
-      <div class="avatar">
-        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="Imran Amran Khan" loading="eager" />
-      </div>
-      <div class="hero-id-badge">
-        <span class="id-label">ID No.</span>
-        <span class="id-value">7556</span>
-      </div>
+        <div class="hero animate">
+            <img class="hero-bg" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80&auto=format&fit=crop" alt="Airplane on runway at sunset" loading="eager" />
+            <div class="punch-hole"></div>
+            <div class="avatar">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="Imran Amran Khan" loading="eager" />
+            </div>
+            <div class="hero-id-badge">
+                <span class="id-label">ID No.</span>
+                <span class="id-value">7556</span>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div class="identity animate delay-1">
+                <div class="name">
+                    <span class="first">Imran</span>
+                    <span class="middle">Amran</span>
+                    <span class="last">Khan</span>
+                </div>
+                <div class="specialization">Aviation Security &amp; Safety Management</div>
+                <div class="company">Tanzania Civil Aviation Authority, TCAA</div>
+                <div class="company-divider"></div>
+            </div>
+
+            <div class="credentials animate delay-2">
+
+                <div class="vb-box blue-border access">
+                    <div class="vb-header">
+                        <span class="vb-title">Access Zone</span>
+                        <span class="header-inline-text blue-text">Level 4 clearance required</span>
+                    </div>
+                    <div class="vb-value">
+                        <span class="zone-desc">High-security restricted area · Biometric &amp; badge access</span>
+                    </div>
+                </div>
+
+                <div class="vb-box orange-border">
+                    <div class="vb-header">
+                        <span class="vb-title orange-pill">Access Permissions</span>
+                        <span class="header-inline-text orange-text">All Restricted Areas</span>
+                    </div>
+                    <div class="vb-value orange-value">Level 4 Security Clearance</div>
+                </div>
+
+                <div class="vb-box black-border">
+                    <div class="vb-header">
+                        <span class="vb-title black-pill">Empowering Law</span>
+                        <span class="header-inline-text black-text">Cap. 54 RE 3079</span>
+                    </div>
+                    <div class="vb-value black-value">Section 1 of the Civil Aviation Act</div>
+                </div>
+
+                <div class="date-split-box">
+                    <div class="date-row">
+                        <div class="date-half issued-half">
+                            <span class="date-label">Issued</span>
+                            <span class="date-value">16 June, 2026</span>
+                        </div>
+                        <div class="divider-line"></div>
+                        <div class="date-half expires-half">
+                            <span class="date-label">Expires</span>
+                            <span class="date-value">15 June, 2029</span>
+                        </div>
+                    </div>
+                    <div class="signature-section">
+                        <div class="signature-left">
+                            <span class="signature-name">Dr. Hamza K. Mwinyi</span>
+                            <span class="signature-designation">Director General</span>
+                        </div>
+                        <div class="signature-right">
+                            <span class="sig-verified">Digitally signed by <strong>Dr. Hamza K. Mwinyi</strong></span>
+                            <span class="sig-time">2026-06-18 14:32:07 EAT</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="content">
-
-      <div class="identity animate delay-1">
-        <div class="name">
-          <span class="first">Imran</span>
-          <span class="middle">Amran</span>
-          <span class="last">Khan</span>
-        </div>
-        <div class="specialization">Aviation Security &amp; Safety Management</div>
-        <div class="company">Tanzania Civil Aviation Authority, TCAA</div>
-        <div class="company-divider"></div>
-      </div>
-
-      <div class="credentials animate delay-2">
-
-        <div class="vb-box blue-border access">
-          <div class="vb-header">
-            <span class="vb-title">Access Zone</span>
-            <span class="header-inline-text blue-text">Level 4 clearance required</span>
-          </div>
-          <div class="vb-value">
-            <span class="zone-desc">High-security restricted area · Biometric &amp; badge access</span>
-          </div>
-        </div>
-
-        <div class="vb-box orange-border">
-          <div class="vb-header">
-            <span class="vb-title orange-pill">Access Permissions</span>
-            <span class="header-inline-text orange-text">All Restricted Areas</span>
-          </div>
-          <div class="vb-value orange-value">Level 4 Security Clearance</div>
-        </div>
-
-        <div class="vb-box black-border">
-          <div class="vb-header">
-            <span class="vb-title black-pill">Empowering Law</span>
-            <span class="header-inline-text black-text">Cap. 54 RE 3079</span>
-          </div>
-          <div class="vb-value black-value">Section 1 of the Civil Aviation Act</div>
-        </div>
-
-        <div class="date-split-box">
-          <div class="date-row">
-            <div class="date-half issued-half">
-              <span class="date-label">Issued</span>
-              <span class="date-value">16 June, 2026</span>
-            </div>
-            <div class="divider-line"></div>
-            <div class="date-half expires-half">
-              <span class="date-label">Expires</span>
-              <span class="date-value">15 June, 2029</span>
-            </div>
-          </div>
-          <div class="signature-section">
-            <div class="signature-left">
-              <span class="signature-name">Dr. Hamza K. Mwinyi</span>
-              <span class="signature-designation">Director General</span>
-            </div>
-            <div class="signature-right">
-              <span class="sig-verified">Digitally signed by <strong>Dr. Hamza K. Mwinyi</strong></span>
-              <span class="sig-time">2026-06-18 14:32:07 EAT</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </body>
 </html>
