@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Executive Profile • No Social Icons</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Executive Profile · full</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lexend', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
     :root {
       --primary: #1B81C4;
       --accent: #F26E2A;
@@ -16,16 +24,7 @@
       --radius: 24px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Lexend', sans-serif;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html,
-    body {
+    html, body {
       width: 100%;
       height: 100%;
       overflow: hidden;
@@ -36,317 +35,455 @@
       justify-content: center;
       align-items: center;
       padding: 12px;
-      background: radial-gradient(circle at top left, rgba(27, 129, 196, 0.25), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(242, 110, 42, 0.15), transparent 35%),
+      background:
+        radial-gradient(circle at top left, rgba(27,129,196,.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(242,110,42,.15), transparent 35%),
         linear-gradient(135deg, #07131f, #0b1f33, #07131f);
     }
 
-    /* CARD */
     .card {
       width: min(100%, 420px);
       height: calc(100dvh - 24px);
-      background: rgba(255, 255, 255, 0.97);
+      background: rgba(255,255,255,.97);
       backdrop-filter: blur(24px);
       border-radius: 28px;
-      border: 2px solid rgba(255, 255, 255, 0.5);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 
-        0 0 0 1px rgba(255, 255, 255, 0.3),
-        0 30px 60px rgba(0, 0, 0, 0.20);
+      box-shadow: 0 30px 60px rgba(0,0,0,.20);
       position: relative;
     }
 
-    /* IMAGE (hero) */
     .hero {
-      height: 30%;
+      height: 24%;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
+      z-index: 1;
     }
-
     .hero img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent, rgba(8, 24, 38, 0.55));
+      background: linear-gradient(180deg, transparent, rgba(8,24,38,.55));
     }
 
-    /* ★ AVATAR - increased size */
+    .verified {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 5;
+      background: white;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    }
+
     .avatar {
       position: absolute;
       left: 20px;
-      bottom: calc(70% - 45px);
-      width: 100px;
-      height: 100px;
+      bottom: -28px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       border: 4px solid white;
       overflow: hidden;
-      z-index: 9999;
+      z-index: 20;
       background: white;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 24px rgba(0,0,0,.15);
     }
-
     .avatar img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    /* CONTENT area */
     .content {
-      height: 70%;
-      padding: 55px 20px 16px;
+      height: 76%;
+      padding: 32px 20px 10px;
       display: flex;
       flex-direction: column;
       position: relative;
       z-index: 1;
-      overflow-y: auto;
-      overflow-x: hidden;
+      background: rgba(255,255,255,.97);
+      border-radius: 0 0 28px 28px;
+      margin-top: -1px;
+      gap: 3px;
     }
 
     .name {
-      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-size: clamp(1.3rem, 4vw, 1.7rem);
       font-weight: 800;
       line-height: 1;
       color: var(--navy);
+      margin-top: 2px;
     }
-
     .role {
-      margin-top: 8px;
-      font-size: 0.95rem;
+      margin-top: 2px;
+      font-size: .8rem;
       font-weight: 700;
       color: var(--primary);
     }
-
     .company {
-      margin-top: 2px;
-      font-size: 0.82rem;
+      margin-top: 1px;
+      font-size: .7rem;
       color: var(--muted);
     }
 
     .bio {
-      margin-top: 12px;
-      padding-left: 12px;
-      border-left: 3px solid rgba(27, 129, 196, 0.25);
-      font-size: 0.76rem;
-      line-height: 1.6;
+      margin-top: 4px;
+      padding-left: 10px;
+      border-left: 3px solid rgba(27,129,196,.2);
+      font-size: .64rem;
+      line-height: 1.4;
       color: #475569;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .tags {
-      margin-top: 12px;
+      margin-top: 4px;
       display: flex;
-      gap: 8px;
+      gap: 4px;
       flex-wrap: wrap;
     }
-
     .tag {
-      padding: 6px 10px;
+      padding: 3px 10px;
       border-radius: 999px;
-      font-size: 0.65rem;
+      font-size: .55rem;
       font-weight: 600;
     }
-
     .blue {
-      background: rgba(27, 129, 196, 0.08);
+      background: rgba(27,129,196,.08);
       color: var(--primary);
     }
-
     .orange {
-      background: rgba(242, 110, 42, 0.08);
+      background: rgba(242,110,42,.08);
       color: var(--accent);
     }
+    .green {
+      background: rgba(34,197,94,.08);
+      color: #16a34a;
+    }
 
+    /* CONTACTS: 3 columns — email, website, location (expanded) */
     .contacts {
-      margin-top: 12px;
+      margin-top: 4px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      grid-template-columns: 1fr 1fr 1.8fr; /* location gets more space */
+      gap: 5px;
     }
-
     .contact {
-      background: #f8fbfd;
-      padding: 10px;
-      border-radius: 12px;
-      font-size: 0.68rem;
-      font-weight: 500;
-      color: #475569;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .contact svg {
-      flex-shrink: 0;
-      width: 14px;
-      height: 14px;
-    }
-
-    .cta {
-      margin-top: 12px;
-      height: 48px;
-      border: none;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--primary), #2899e3);
-      color: white;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      cursor: pointer;
-      flex-shrink: 0;
-      text-decoration: none;
+      background: #f0f6fc;
+      padding: 7px 4px;
+      border-radius: 10px;
+      font-size: .58rem;
+      font-weight: 600;
+      color: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+    .contact-email {
+      white-space: normal !important;
+      word-break: break-all;
+      overflow: visible;
+      text-overflow: clip;
+      font-size: .52rem;
+      padding: 7px 4px;
+      line-height: 1.2;
+    }
+    .contact svg {
+      flex-shrink: 0;
+      width: 12px;
+      height: 12px;
+      fill: var(--primary);
+    }
+    .contact span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .contact-email span {
+      white-space: normal;
+      word-break: break-all;
+      overflow: visible;
+      text-overflow: clip;
+    }
+    /* Location gets extra width and more content */
+    .contact-location {
+      background: #e8f0fe;
+      font-weight: 600;
+      font-size: .6rem;
+      padding: 7px 8px;
+      justify-content: center;
+      gap: 6px;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      flex: 1;
+    }
+    .contact-location span {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+    }
+    .contact-location .location-detail {
+      font-weight: 400;
+      color: #475569;
+      font-size: .55rem;
+      margin-left: 2px;
     }
 
-    .stats {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border);
+    .socials {
+      display: none;
+    }
+
+    .extra-info {
+      margin-top: 3px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 4px;
+    }
+    .extra-item {
+      background: #f8fafc;
+      padding: 4px 8px;
+      border-radius: 10px;
+      font-size: .55rem;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #eef2f6;
+    }
+    .extra-item svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--primary);
+      flex-shrink: 0;
+    }
+    .extra-item strong {
+      font-weight: 700;
+      color: var(--navy);
+      margin-right: 2px;
+    }
+
+    .cta {
+      margin-top: 3px;
+      height: 34px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), #2899e3);
+      color: white;
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: default;
       flex-shrink: 0;
     }
 
+    .bottom-section {
+      margin-top: 3px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+    .bottom-item {
+      background: #f8fafc;
+      padding: 4px 8px;
+      border-radius: 10px;
+      font-size: .52rem;
+      font-weight: 500;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #eef2f6;
+    }
+    .bottom-item svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--primary);
+      flex-shrink: 0;
+    }
+    .bottom-item strong {
+      font-weight: 700;
+      color: var(--navy);
+      margin-right: 2px;
+    }
+
+    .stats {
+      margin-top: auto;
+      padding-top: 5px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 2px;
+      flex-shrink: 0;
+    }
     .stat {
       text-align: center;
     }
-
     .value {
-      font-size: 1rem;
+      font-size: .8rem;
       font-weight: 800;
       color: var(--navy);
     }
-
     .label {
-      font-size: 0.55rem;
-      letter-spacing: 1px;
+      font-size: .45rem;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
       color: #94a3b8;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
-    /* small device adjustments */
-    @media (max-height: 700px) {
-      .hero {
-        height: 26%;
-      }
-      
-      .avatar {
-        bottom: calc(74% - 45px);
-      }
-      
-      .content {
-        padding: 55px 20px 16px;
-      }
-      
-      .bio {
-        font-size: 0.72rem;
-      }
-      .tags {
-        margin-top: 8px;
-      }
-      .contacts {
-        margin-top: 8px;
-      }
-      .cta {
-        margin-top: 8px;
-        height: 44px;
-      }
+    @media (max-height:700px) {
+      .hero { height: 20%; }
+      .content { padding: 26px 14px 6px; gap: 2px; }
+      .bio { -webkit-line-clamp: 2; font-size: .58rem; }
+      .tags { margin-top: 3px; }
+      .contacts { margin-top: 3px; }
+      .extra-info { margin-top: 2px; }
+      .cta { margin-top: 2px; height: 30px; font-size: .58rem; }
+      .bottom-section { margin-top: 2px; }
+      .stats { padding-top: 4px; }
+      .value { font-size: .7rem; }
+      .contact-location { font-size: .52rem; padding: 5px 6px; }
+      .contact-location .location-detail { font-size: .48rem; }
+    }
+    @media (max-width: 400px) {
+      .contacts { gap: 3px; grid-template-columns: 1fr 1fr 1.6fr; }
+      .contact { font-size: .46rem; padding: 4px 3px; }
+      .contact-email { font-size: .44rem; }
+      .contact-location { font-size: .48rem; padding: 4px 5px; }
+      .contact-location .location-detail { font-size: .44rem; }
+      .extra-item { font-size: .48rem; padding: 3px 5px; }
+      .bottom-item { font-size: .44rem; padding: 3px 5px; }
+      .extra-item svg, .bottom-item svg { width: 10px; height: 10px; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <!-- hero section -->
-    <div class="hero">
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="Executive background" />
-    </div>
-
-    <!-- AVATAR positioned at boundary -->
+<div class="card">
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="executive">
+    <div class="verified">✓ VERIFIED</div>
     <div class="avatar">
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="Jonathan Mercer avatar" />
-    </div>
-
-    <!-- content -->
-    <div class="content">
-      <div class="name">Jonathan Mercer</div>
-      <div class="role">Chairman & CEO</div>
-      <div class="company">Meridian Global Holdings</div>
-
-      <div class="bio">
-        Transformational enterprise leader with three decades scaling global organizations across finance, technology, and sustainable energy. Architect of multi-billion-dollar value creation and global expansion.
-      </div>
-
-      <div class="tags">
-        <div class="tag orange">Fortune 100 CEO</div>
-        <div class="tag blue">WEF Leader</div>
-        <div class="tag blue">ESG Pioneer</div>
-      </div>
-
-      <div class="contacts">
-        <div class="contact">
-          <!-- Email SVG Icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M22 4L12 13L2 4" />
-          </svg>
-          chairman@meridian.com
-        </div>
-        <div class="contact">
-          <!-- Globe/Website SVG Icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="2" y1="12" x2="22" y2="12" />
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          </svg>
-          meridian.com
-        </div>
-        <div class="contact">
-          <!-- Location Pin SVG Icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          New York
-        </div>
-      </div>
-
-      <a href="https://wa.me/255766580492" target="_blank" class="cta">SECURE CONTACT</a>
-
-      <div class="stats">
-        <div class="stat">
-          <div class="value">$4.2B</div>
-          <div class="label">AUM</div>
-        </div>
-        <div class="stat">
-          <div class="value">12×</div>
-          <div class="label">Boards</div>
-        </div>
-        <div class="stat">
-          <div class="value">47</div>
-          <div class="label">Countries</div>
-        </div>
-        <div class="stat">
-          <div class="value">28K+</div>
-          <div class="label">Employees</div>
-        </div>
-      </div>
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="avatar">
     </div>
   </div>
+
+  <div class="content">
+    <div class="name">Jonathan Mercer</div>
+    <div class="role">Chairman & CEO</div>
+    <div class="company">Meridian Global Holdings · Est. 1998</div>
+
+    <div class="bio">
+      Transformational enterprise leader scaling global organizations across finance, technology, and sustainable energy.
+    </div>
+
+    <div class="tags">
+      <div class="tag orange">Fortune 100 CEO</div>
+      <div class="tag blue">WEF Leader</div>
+      <div class="tag green">ESG Pioneer</div>
+      <div class="tag blue">Harvard Alum</div>
+    </div>
+
+    <!-- CONTACTS: email + website + LOCATION (expanded) -->
+    <div class="contacts">
+      <div class="contact contact-email">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
+          <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
+        </svg>
+        <span>chairman@meridian.com</span>
+      </div>
+      <div class="contact">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <span>meridian.com</span>
+      </div>
+      <!-- EXPANDED LOCATION with extra info -->
+      <div class="contact contact-location">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>
+          New York, NY
+          <span class="location-detail">· Global HQ · 1 World Trade</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <div class="extra-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+        </svg>
+        <span><strong>12</strong> Board Seats</span>
+      </div>
+      <div class="extra-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span><strong>47</strong> Countries</span>
+      </div>
+    </div>
+
+    <button class="cta">SECURE CONTACT</button>
+
+    <div class="bottom-section">
+      <div class="bottom-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span><strong>28K+</strong> Employees</span>
+      </div>
+      <div class="bottom-item">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <span><strong>94%</strong> Retention</span>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="value">$4.2B</div><div class="label">AUM</div></div>
+      <div class="stat"><div class="value">2030</div><div class="label">Net Zero</div></div>
+      <div class="stat"><div class="value">47</div><div class="label">Countries</div></div>
+      <div class="stat"><div class="value">12×</div><div class="label">Boards</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.social').forEach(el => {
+    el.addEventListener('click', () => {
+      el.animate([
+        {transform: 'scale(1)'},
+        {transform: 'scale(.92)'},
+        {transform: 'scale(1)'}
+      ], {duration: 180})
+    })
+  })
+</script>
 </body>
 </html>
