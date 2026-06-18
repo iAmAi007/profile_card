@@ -241,7 +241,6 @@
       gap: 7px;
     }
 
-    /* ── FIX: removed overflow:hidden so border is not clipped ── */
     .vb-box {
       background: var(--bg-soft);
       border: 0.5px solid var(--border);
@@ -355,7 +354,6 @@
       word-wrap: break-word;
     }
 
-    /* ── Keep overflow:hidden only on date-split-box to contain divider ── */
     .date-split-box {
       display: flex;
       flex-direction: column;
@@ -478,9 +476,10 @@
       line-height: 1.3;
     }
 
+    /* ── FOOTER SPACER: now matches space above name (padding-top of .content) ── */
     .footer-spacer {
       margin-top: auto;
-      height: 4px;
+      height: 16px;
     }
 
     @keyframes calibrate {
@@ -523,6 +522,7 @@
       .signature-left .signature-designation { font-size: 0.5rem; }
       .signature-right .sig-verified { font-size: 0.45rem; }
       .signature-right .sig-time { font-size: 0.45rem; }
+      .footer-spacer { height: 12px; }
     }
 
     @media (max-height: 560px) {
@@ -554,6 +554,7 @@
       .signature-left .signature-designation { font-size: 0.45rem; }
       .signature-right .sig-verified { font-size: 0.4rem; }
       .signature-right .sig-time { font-size: 0.4rem; }
+      .footer-spacer { height: 8px; }
     }
 
     @media (max-width: 420px) {
@@ -593,7 +594,6 @@
 
       <div class="credentials animate delay-2">
 
-        <!-- ACCESS ZONE — border now fully visible -->
         <div class="vb-box blue-border access">
           <div class="vb-header">
             <span class="vb-title">Access Zone</span>
@@ -646,6 +646,7 @@
 
       </div>
 
+      <!-- FOOTER SPACER: now matches space above name (padding-top of .content = 16px) -->
       <div class="footer-spacer"></div>
 
     </div>
@@ -653,4 +654,4 @@
   </div>
 
 </body>
-</html></html>
+</html></html></html>
