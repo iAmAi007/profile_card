@@ -17,6 +17,7 @@
       --box-radius: 14px;
       --bg-soft: #fcfcfc;
       --scale: 0.97;
+      --golden: 1.618;
     }
 
     * {
@@ -201,12 +202,42 @@
       margin-bottom: 12px;
     }
 
-    .name {
+    /* ── NAME ROW: golden ratio split (name takes larger portion) ── */
+    .name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      width: 100%;
+    }
+
+    .name-row .name {
       font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+      font-weight: 800;
       line-height: 1.1;
       color: var(--navy);
       letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 0 0 calc(100% / 1.618);
+      max-width: calc(100% / 1.618);
     }
+
+    .name-row .name-spacer {
+      flex: 1 1 auto;
+      min-width: 4px;
+    }
+
+    .name-row .name-extra {
+      font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1 1 auto;
+    }
+
     .name .first {
       font-weight: 500;
     }
@@ -214,15 +245,43 @@
       font-weight: 600;
     }
     .name .last {
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .specialization {
+    /* ── TITLE ROW: golden ratio split ── */
+    .title-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0;
+      width: 100%;
       margin-top: 2px;
+    }
+
+    .title-row .specialization {
       font-size: clamp(0.95rem, 3.2vw, 1.2rem);
       font-weight: 700;
       color: var(--primary);
       letter-spacing: 0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 0 0 calc(100% / 1.618);
+      max-width: calc(100% / 1.618);
+    }
+
+    .title-row .title-spacer {
+      flex: 1 1 auto;
+      min-width: 4px;
+    }
+
+    .title-row .title-extra {
+      font-size: clamp(0.65rem, 2vw, 0.75rem);
+      font-weight: 500;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1 1 auto;
     }
 
     .company {
@@ -476,7 +535,6 @@
       line-height: 1.3;
     }
 
-    /* ── FOOTER SPACER: now matches space above name (padding-top of .content) ── */
     .footer-spacer {
       margin-top: auto;
       height: 16px;
@@ -506,8 +564,10 @@
       .content { padding: 12px 14px 6px 14px; }
       .identity { margin-bottom: 8px; }
       .credentials { gap: 5px; }
-      .name { font-size: clamp(1.3rem, 4.5vw, 1.6rem); }
-      .specialization { font-size: clamp(0.8rem, 2.8vw, 1.0rem); }
+      .name-row .name { font-size: clamp(1.3rem, 4.5vw, 1.6rem); }
+      .name-row .name-extra { font-size: clamp(0.7rem, 2.2vw, 0.85rem); }
+      .title-row .specialization { font-size: clamp(0.8rem, 2.8vw, 1.0rem); }
+      .title-row .title-extra { font-size: clamp(0.55rem, 1.6vw, 0.65rem); }
       .company { font-size: 0.62rem; }
       .vb-box { padding: 8px 12px; }
       .vb-box .vb-title { font-size: 0.5rem; padding: 1px 10px; }
@@ -538,8 +598,10 @@
       .content { padding: 8px 10px 4px 10px; }
       .identity { margin-bottom: 6px; }
       .credentials { gap: 4px; }
-      .name { font-size: clamp(1.0rem, 3.8vw, 1.3rem); }
-      .specialization { font-size: clamp(0.65rem, 2.2vw, 0.8rem); }
+      .name-row .name { font-size: clamp(1.0rem, 3.8vw, 1.3rem); }
+      .name-row .name-extra { font-size: clamp(0.6rem, 1.8vw, 0.7rem); }
+      .title-row .specialization { font-size: clamp(0.65rem, 2.2vw, 0.8rem); }
+      .title-row .title-extra { font-size: clamp(0.45rem, 1.4vw, 0.55rem); }
       .company { font-size: 0.55rem; }
       .vb-box { padding: 6px 10px; }
       .vb-box .vb-title { font-size: 0.45rem; padding: 1px 8px; }
@@ -560,6 +622,13 @@
     @media (max-width: 420px) {
       body { padding: 16px; }
       .card { height: calc(100dvh - 32px); }
+    }
+
+    @media (max-width: 360px) {
+      .name-row .name { font-size: 1.1rem; }
+      .title-row .specialization { font-size: 0.6rem; }
+      .name-row .name-extra { font-size: 0.6rem; }
+      .title-row .title-extra { font-size: 0.5rem; }
     }
   </style>
 </head>
@@ -583,13 +652,25 @@
     <div class="content">
 
       <div class="identity animate delay-1">
-        <div class="name">
-          <span class="first">Imran</span>
-          <span class="middle">Amran</span>
-          <span class="last">Khan</span>
+        <!-- NAME ROW: golden ratio split -->
+        <div class="name-row">
+          <span class="name">
+            <span class="first">Imran</span>
+            <span class="middle">Amran</span>
+            <span class="last">Khan</span>
+          </span>
+          <span class="name-spacer"></span>
+          <span class="name-extra">ID 7556</span>
         </div>
-        <div class="specialization">Aviation Security &amp; Safety Management</div>
-        <div class="company">Tanzania Civil Aviation Authority, TCAA</div>
+
+        <!-- TITLE ROW: golden ratio split -->
+        <div class="title-row">
+          <span class="specialization">Aviation Security &amp; Safety Management</span>
+          <span class="title-spacer"></span>
+          <span class="title-extra">TCAA</span>
+        </div>
+
+        <div class="company">Tanzania Civil Aviation Authority</div>
       </div>
 
       <div class="credentials animate delay-2">
@@ -646,7 +727,6 @@
 
       </div>
 
-      <!-- FOOTER SPACER: now matches space above name (padding-top of .content = 16px) -->
       <div class="footer-spacer"></div>
 
     </div>
@@ -654,4 +734,4 @@
   </div>
 
 </body>
-</html></html></html>
+</html></html></html></html>
