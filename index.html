@@ -431,15 +431,15 @@
             border-top: 1px solid rgba(27, 129, 196, 0.15);
             background: rgba(27, 129, 196, 0.02);
             min-height: 60px;
+            gap: 16px;
         }
 
         .signature-left {
-            flex: 0 0 50%;
+            flex: 0 1 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 10px 14px;
-            border-right: none;
+            padding: 10px 0 10px 14px;
             min-width: 0;
         }
 
@@ -464,11 +464,11 @@
         }
 
         .signature-right {
-            flex: 0 0 50%;
+            flex: 1 1 auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 10px 14px;
+            padding: 10px 14px 10px 0;
             align-items: flex-end;
             text-align: right;
             min-width: 0;
@@ -611,12 +611,13 @@
             }
             .signature-section {
                 min-height: 52px;
+                gap: 12px;
             }
             .signature-left {
-                padding: 8px 12px;
+                padding: 8px 0 8px 12px;
             }
             .signature-right {
-                padding: 8px 12px;
+                padding: 8px 12px 8px 0;
             }
         }
 
@@ -706,12 +707,13 @@
             }
             .signature-section {
                 min-height: 44px;
+                gap: 8px;
             }
             .signature-left {
-                padding: 6px 10px;
+                padding: 6px 0 6px 10px;
             }
             .signature-right {
-                padding: 6px 10px;
+                padding: 6px 10px 6px 0;
             }
         }
 
