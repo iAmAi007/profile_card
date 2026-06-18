@@ -52,7 +52,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0 30px 60px rgba(0,0,0,.20);
-      position: relative; /* for z-index stacking */
+      position: relative;
     }
 
     /* hero image */
@@ -61,7 +61,7 @@
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
-      z-index: 1; /* base layer */
+      z-index: 1;
     }
     .hero img {
       width: 100%;
@@ -90,17 +90,17 @@
       box-shadow: 0 8px 20px rgba(0,0,0,.12);
     }
 
-    /* AVATAR — now in front of content with higher z-index */
+    /* AVATAR — in front of content */
     .avatar {
       position: absolute;
       left: 20px;
-      bottom: -28px;      /* half outside hero, half overlapping content */
+      bottom: -28px;
       width: 72px;
       height: 72px;
       border-radius: 50%;
       border: 4px solid white;
       overflow: hidden;
-      z-index: 20;        /* HIGHER than content (z-index:1) and hero */
+      z-index: 20;
       background: white;
       box-shadow: 0 8px 24px rgba(0,0,0,.15);
     }
@@ -117,10 +117,10 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      z-index: 1;         /* content layer, avatar sits above it */
-      background: rgba(255,255,255,.97); /* ensure solid background so avatar pops */
+      z-index: 1;
+      background: rgba(255,255,255,.97);
       border-radius: 0 0 28px 28px;
-      margin-top: -1px;   /* avoid tiny gap */
+      margin-top: -1px;
     }
 
     .name {
@@ -128,7 +128,7 @@
       font-weight: 800;
       line-height: 1;
       color: var(--navy);
-      margin-top: 4px;    /* fine-tune spacing after avatar overlap */
+      margin-top: 4px;
     }
     .role {
       margin-top: 8px;
@@ -176,11 +176,11 @@
       color: var(--accent);
     }
 
-    /* ONE ROW: website only */
+    /* CONTACTS: TWO ITEMS (email + website) in one row */
     .contacts {
       margin-top: 12px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;  /* two equal columns */
       gap: 8px;
     }
     .contact {
@@ -193,17 +193,22 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-    .contacts .contact:not(:first-child) {
-      display: none;
-    }
-    .contacts .contact:first-child {
-      grid-column: 1 / -1;
       text-align: center;
+    }
+    /* both items visible, no hidden extras */
+    .contacts .contact {
+      display: block;
+    }
+    /* optional: style first item (email) slightly different? keep uniform */
+    .contacts .contact:first-child {
       background: #f0f6fc;
       font-weight: 600;
       color: var(--navy);
-      letter-spacing: 0.3px;
+    }
+    .contacts .contact:last-child {
+      background: #f0f6fc;
+      font-weight: 600;
+      color: var(--navy);
     }
 
     /* socials removed */
@@ -263,7 +268,6 @@
   <div class="hero">
     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80&auto=format&fit=crop" alt="executive">
     <div class="verified">✓ VERIFIED</div>
-    <!-- avatar inside hero, but with z-index 20 it will overlap content -->
     <div class="avatar">
       <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop" alt="avatar">
     </div>
@@ -284,8 +288,9 @@
       <div class="tag blue">ESG Pioneer</div>
     </div>
 
-    <!-- ONE ROW: website only (location & phone removed) -->
+    <!-- TWO ROW: email + website (location & phone removed) -->
     <div class="contacts">
+      <div class="contact">✉ chairman@meridian.com</div>
       <div class="contact">🌐 meridian.com</div>
     </div>
 
